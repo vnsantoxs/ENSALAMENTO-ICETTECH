@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style_login.css' %}" />
+    <title>Login</title>
+  </head>
+  <body> 
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <a href="">Sobre Nós</a>
+      </div>
+    </nav>
+    <section>
+      <div class="text_login">
+        <h2>Login</h2>
+        <hr>
+      </div>
+      <div>
+        <form id="formulario-login" action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+          <div class="parametros">
+            <div class="parametros_login">
+              <label for="siape">SIAPE</label>
+              <input type="text" name="siape" id="campo_siape" required>
+            </div>
+            <div class="parametros_login">
+              <label for="Senha">Senha</label>
+              <input type="password" name="senha" id="campo_senha" required>
+              <hr>
+            </div>
+          </div>
+          <div class="subimit">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="logotipo1_Login">
+        <img src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </footer>
+  </body>
+</html>

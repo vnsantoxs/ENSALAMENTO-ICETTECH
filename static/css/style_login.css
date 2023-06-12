@@ -1,0 +1,107 @@
+body {
+  background-image: url(../imagens/Fundo.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-style: normal;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.navegação {
+  margin-left: 90vw; /* Move os links para a direita */
+  margin-top: -50px;
+}
+
+.links {
+  margin: 15px;
+  color: white;
+}
+
+.nomeLogo {
+  margin-left: 50px;
+  color: white;
+}
+
+.logotipo2 {
+  position: absolute;
+  width: 24px;
+  height: 34px;
+  left: 130px;
+  top: 20px;
+  filter: drop-shadow(6px 8px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 1px;
+}
+
+.logotipo1_Login {
+  position: absolute;
+  left: 3%;
+  top: 75%;
+}
+
+.logotipo1_Login img {
+  width: 150px; /* Novo valor de largura */
+  height: 150px; /* Novo valor de altura */
+}
+
+.text_login {
+  position: absolute;
+  left: 50%; /* Define a posição horizontalmente */
+  top: 20%; /* Define a posição verticalmente */
+  transform: translate(-50%, -50%); /* Centraliza a div no centro da tela */
+  text-align: center;
+  color: white;
+}
+
+.text_login h2,
+.text_login hr {
+  margin: 0;
+}
+
+.parametros {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 530px;
+  top: 150px;
+  font-size: larger;
+  color: white;
+}
+
+.parametros_login label {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.parametros_login input {
+  display: grid;
+  margin-top: 10px;
+  padding: 10px 60px;
+  background-color: whitesmoke;
+  border: none;
+  border-bottom: 1px solid #e1e1e1;
+  outline: none;
+}
+
+.subimit button {
+  position: absolute;
+  width: 290px;
+  height: 40px;
+  left: 530px;
+  top: 330px;
+
+  background: #1d8a6d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.76);
+  border-radius: 6px;
+
+  font-style: normal;
+  font-size: medium;
+}

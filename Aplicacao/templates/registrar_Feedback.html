@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style_feedback.css' %}" />
+
+    <title>Feedback</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <p>Perfil</p>
+        <a href=""><img src="{% static 'imagens/iconeprofessor.png' %}" alt="" /></a>
+      </div>
+    </nav>
+    <section class="feedback-section">
+      <div class="feedback-title">
+        <p>Registrar</p>
+        <h1>feedback</h1>
+      </div>
+      <div>
+        <form id="feedbackForm" class="feedback-form" action="">
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" name="feedback"></textarea>
+          <br />
+          <input type="submit" value="Enviar" />
+        </form>
+      </div>
+    </section>
+    <section>
+      <div id="messageBox">
+        <img src="{% static 'imagens/LogoicettechC.png' %}" alt="Imagem de Feedback" />
+        <p>Icettech agradece seu feedback!</p>
+        <p>
+          Obrigado por enviar seu feedback, ajudara a melhorar a plataforma para
+          todos.
+        </p>
+      </div>
+    </section>
+    <script src="../Javascript/app.js"></script>
+  </body>
+</html>

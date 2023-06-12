@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/C_disciplina.css' %}" />
+    <title>Cadastrar disciplina</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <p>Perfil</p>
+        <a href=""><img src="{% static 'imagens/Iconeprofessor2.png' %}" alt="" /></a>
+      </div>
+    </nav>
+    <section class="disciplina-section">
+      <div class="disciplina-title">
+        <p>Gerenciar</p>
+        <h1>disciplina</h1>
+      </div>
+      <form id="formulario_D" onsubmit="return Disciplina.salvar(event)">
+        <h4>Cadastrar disciplina</h4>
+        <div class="parametro">
+          <div class="parametro_cadastro">
+            <label for="nome">Nome da disciplina:</label>
+            <input type="text" name="disciplina" id="campo_nomeD" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="telefone">Código:</label>
+            <input type="text" name="codigo" id="campo_codigo" />
+          </div>
+        </div>
+        <div class="subimit">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </section>
+    <div>
+      <button class="button_back">Voltar</button>
+    </div>
+    <script src="../JAVASCRIPT/app.js"></script>
+  </body>
+</html>

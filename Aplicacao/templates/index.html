@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/estiloHome.css' %}" />
+    <title>ICETTECH</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img
+          class="logotipo2"
+          src="{% static 'imagens/LogoicettechPB.png' %}"
+          alt="Logo2"
+        />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <a href="">Sobre Nós</a>
+      </div>
+    </nav>
+    <section>
+      <div class="conteiner_1">
+        <h1>A Chave para o Aprendizado é a Organização!</h1>
+        <p>Sistema de Ensalamento para a Universidade Federal do Amazonas.</p>
+      </div>
+      <div class="logotipo1">
+        <img src="{% static 'imagens/LogoicettechPB.png' %}" alt="Logo1" />
+      </div>
+      <div class="small_text">
+        <p>Deseja apenas visuzalizar os ensalamentos?</p>
+      </div>
+      <div>
+        <a href=""
+          ><button class="botão_ensalamento">
+            Acessar os Ensalamentos
+          </button></a
+        >
+      </div>
+      <div>
+        <a href="{% url 'login' %}"><button class="botãoL">Login</button></a>
+      </div>
+      <br />
+      <div class="link_cadastro">
+        <p>Ja possui cadastro?</p>
+        <a href="{% url 'tipocadastro' %}">Clique aqui!</a>
+      </div>
+    </section>
+  </body>
+</html>

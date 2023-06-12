@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/C_espacofisico.css' %}" />
+    <title>Cadastrar espaço físico</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <p>Perfil</p>
+        <a href=""><img src="{% static 'imagens/Iconeprofessor2.png' %}" alt="" /></a>
+      </div>
+    </nav>
+    <section class="curso-section">
+      <div class="curso-title">
+        <p>Gerenciar</p>
+        <h1>Espaço físico</h1>
+      </div>
+      <form action="">
+        <h4>Cadastrar espaços físicos</h4>
+        <div class="parametro">
+          <div class="parametro_cadastro">
+            <label for="dimensoes">Dimensões:</label>
+            <input type="text" name="dimensoes" id="campo_dimensoes" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="capacidade">Capacidade:</label>
+            <input type="text" name="capacidade" id="campo_capacidade" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="bloco">Bloco:</label>
+            <input type="text" name="bloco" id="campo_bloco" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="andar">Andar:</label>
+            <input type="text" name="andar" id="campo_andar" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="numero">Número:</label>
+            <input type="text" name="numero" id="campo_numero" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="n_bloco">Nome do bloco:</label>
+            <input type="text" name="nome_bloco" id="campo_nome_bloco" />
+          </div>
+        </div>
+        <div class="subimit">
+          <button type="submit">Finalizar</button>
+        </div>
+      </form>
+    </section>
+    <div>
+      <button class="button_back">Voltar</button>
+    </div>
+  </body>
+</html>

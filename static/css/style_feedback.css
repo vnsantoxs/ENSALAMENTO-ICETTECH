@@ -1,0 +1,140 @@
+body {
+  background-image: url(../imagens/Background2.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  font-style: normal;
+}
+
+.logotipo2 {
+  position: absolute;
+  width: 24px;
+  height: 34px;
+  left: 130px;
+  top: 20px;
+  filter: drop-shadow(6px 8px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 1px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.navegação {
+  display: flex;
+  position: absolute;
+  left: 90%;
+  top: 1px;
+}
+
+.links p,
+.links a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  color: white;
+}
+
+.links {
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.nomeLogo {
+  margin-left: 50px;
+  color: white;
+}
+
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.feedback-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.feedback-title p,
+.feedback-title h1 {
+  margin: 0;
+}
+
+.feedback-form {
+  text-align: left;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.feedback-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.feedback-form textarea {
+  width: 900px;
+  height: 350px;
+  resize: vertical;
+  padding: 5px;
+  vertical-align: top;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.feedback-form input[type="submit"] {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.feedback-form input[type="submit"]:hover {
+  background-color: gray;
+}
+
+#messageBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: none;
+  text-align: center;
+}
+
+#messageBox p {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+#messageBox img {
+  width: 50px;
+  height: 80px;
+  float: left;
+  margin-right: 10px;
+}

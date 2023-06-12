@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, max-scale=1.0"
+    />
+    <link rel="stylesheet" href="{% static 'css/estiloHome.css' %}" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <a href="">Sobre Nós</a>
+      </div>
+    </nav>
+    <section>
+      <div class="conteiner_2">
+        <h1>Cadastro</h1>
+        <hr />
+        <p>Você é um:</p>
+      </div>
+      <div class="conteiner-tipo_cadastro">
+        <a id="img_Admin" href="{% url 'cadastroadministrador' %}"
+          ><img src="{% static 'imagens/iconeadministrador.png' %}" alt=""
+        /></a>
+        <a href="{% url 'cadastroprofessor' %}"
+          ><img src="{% static 'imagens/iconeprofessor.png' %}" alt=""
+        /></a>
+      </div>
+      <div class="identify_text">
+        <p>Administrador</p>
+      </div>
+      <div class="identify_text1">
+        <p>Professor</p>
+      </div>
+    </section>
+    <footer>
+      <div class="logotipo1_cadastro">
+        <img src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </footer>
+  </body>
+</html>

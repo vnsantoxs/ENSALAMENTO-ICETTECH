@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/menuspa.css' %}" />
+    <title>Professor</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <p>Perfil</p>
+        <a href=""><img src="{% static 'imagens/LogoicettechPB.png' %}" alt="" /></a>
+      </div>
+    </nav>
+    <section class="Center">
+      <div>
+        <div class="text_menu">
+          <h4>Sistema de</h4>
+          <h1>Ensalamento</h1>
+          <h4>UFAM - ICET</h4>
+        </div>
+        <div class="logo_menus">
+          <img src="{% static 'imagens/LogoIcetTechCV.png' %}" alt="" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="conteiner_funcoes_2">
+        <a class="funcao" href="{%  url 'registrarfeedback' %}"
+          ><button>
+            <p>Registrar</p>
+            <h2>Feedback</h2>
+          </button></a
+        >
+        <a class="funcao" href="">
+          <button>
+            <p>Visualizar</p>
+            <h2>Ensalamento</h2>
+          </button></a
+        >
+        <a class="funcao" href="">
+          <button>
+            <p>Registrar</p>
+            <h2>Frequência</h2>
+          </button></a
+        >
+      </div>
+    </section>
+  </body>
+</html>

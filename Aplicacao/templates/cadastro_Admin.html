@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, max-scale=1.0"
+    />
+    <link rel="stylesheet" href="{% static 'css/style_cadastro.css'%}" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png'%}" alt="" />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <a href="">Sobre Nós</a>
+      </div>
+    </nav>
+    <section>
+      <div class="text_cadastro">
+        <h2>Cadastro</h2>
+        <hr />
+      </div>
+      <form action="{% url 'cadastroadministrador' %}" method="post">
+        {% csrf_token %}
+        <div class="parametro">
+          <div class="parametro_cadastro">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" name="Nome" id="campo_nome" required />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" id="campo_telefone" required />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="campo_email" required />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="campo_senha" required />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="nome">SIAPE:</label>
+            <input type="text" name="siape" id="campo_siape" required />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="nome">Cargo:</label>
+            <input type="text" name="cargo" id="campo_cargo" required />
+          </div>
+        </div>
+        <div class="parametro_cadastro_comorbidade">
+          <p>Você possui alguma comorbidade?</p>
+          <label for="sim_comorbidade">Sim</label>
+          <input
+            type="checkbox"
+            name="comorbidade"
+            id="campo_sim_comorbidade"
+            value="sim"
+          />
+          <label for="nao_comorbidade">Não</label>
+          <input
+            type="checkbox"
+            name="comorbidade"
+            id="campo_nao_comorbidade"
+            value="nao"
+          />
+        </div>
+        <div class="subimit">
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+    </section>
+    <footer>
+      <div class="logotipo1_Login">
+        <img src="{% static 'imagens/LogoIcetTech1.png' %}" alt="" />
+      </div>
+    </footer>
+  </body>
+</html>
