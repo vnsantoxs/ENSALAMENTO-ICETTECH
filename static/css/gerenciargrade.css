@@ -1,0 +1,119 @@
+body {
+  background-image: url(../imagens/Background2.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  font-style: normal;
+}
+
+.logotipo2 {
+  position: absolute;
+  width: 24px;
+  height: 34px;
+  left: 130px;
+  top: 20px;
+  filter: drop-shadow(6px 8px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 1px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.navegação {
+  display: flex;
+  position: absolute;
+  left: 90%;
+  top: 1px;
+}
+
+.links p,
+.links a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  color: white;
+}
+
+.links {
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.nomeLogo {
+  margin-left: 50px;
+  color: white;
+}
+
+.title {
+  position: absolute;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+  left: 160px;
+  top: 110px;
+}
+
+.title p,
+.title h1 {
+  margin: 0;
+}
+
+.title {
+  position: absolute;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+  left: 160px;
+  top: 110px;
+}
+
+.title p,
+.title h1 {
+  margin: 0;
+}
+
+.conteiner {
+  position: absolute;
+  top: 180px;
+  left: 160px;
+  box-sizing: border-box;
+  width: 76%;
+  height: 50%;
+  background-color: #dadada;
+  border: 1px;
+  border-radius: 6px;
+}
+
+.button_back {
+  position: absolute;
+  left: 84%;
+  top: 150px;
+  background-color: transparent;
+  border: none;
+  color: #dadada;
+  cursor: pointer;
+}
+
+.button-Ad {
+  position: absolute;
+  top: 80%;
+  left: 38%;
+}
+
+.button-Ad button {
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.76);
+  border-radius: 6px;
+  border: none;
+  width: 285px;
+  height: 40px;
+}

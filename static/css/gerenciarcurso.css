@@ -67,85 +67,53 @@ body {
   margin: 0;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.title {
   position: absolute;
-  padding: 20px;
-  left: 110px;
-  top: 30%;
-  background-color: white;
-  padding: 10px 40px;
-  border-radius: 10px;
-}
-
-.parametro {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 10px;
-}
-
-.parametro_cadastro {
-  display: flex;
-  flex-direction: column;
-}
-
-.parametro_cadastro label {
-  margin-bottom: 5px;
-  color: black;
-}
-
-.parametro_cadastro input[type="text"] {
-  width: 100%;
-  padding: 10px 75px;
-  box-sizing: border-box;
-  background-color: darkslategray;
-  border-color: white;
-  color: white;
-}
-
-.subimit button {
-  position: absolute;
-  width: 285px;
-  height: 40px;
-  left: 74%;
-  top: 180px;
-
-  background: #1d8a6d;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.76);
-  border-radius: 6px;
-
-  font-style: normal;
-  font-size: medium;
-}
-
-.curso-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 100px;
-  margin-top: 50px;
-}
-
-.curso-title {
   font-size: 24px;
   margin-bottom: 20px;
   color: white;
+  left: 160px;
+  top: 110px;
 }
 
-.curso-title p,
-.curso-title h1 {
+.title p,
+.title h1 {
   margin: 0;
+}
+
+.conteiner-feedbacks {
+  position: absolute;
+  top: 180px;
+  left: 160px;
+  box-sizing: border-box;
+  width: 76%;
+  height: 50%;
+  background-color: #dadada;
+  border: 1px;
+  border-radius: 6px;
 }
 
 .button_back {
   position: absolute;
-  left: 87%;
-  top: 165px;
+  left: 84%;
+  top: 150px;
   background-color: transparent;
   border: none;
   color: #dadada;
   cursor: pointer;
+}
+
+.button-Ad {
+  position: absolute;
+  top: 80%;
+  left: 38%;
+}
+
+.button-Ad button {
+  background: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.76);
+  border-radius: 6px;
+  border: none;
+  width: 285px;
+  height: 40px;
 }

@@ -1,0 +1,132 @@
+body {
+  background-image: url(../imagens/Background2.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  font-style: normal;
+}
+
+.logotipo2 {
+  position: absolute;
+  width: 24px;
+  height: 34px;
+  left: 130px;
+  top: 20px;
+  filter: drop-shadow(6px 8px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 1px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.navegação {
+  display: flex;
+  position: absolute;
+  left: 90%;
+  top: 1px;
+}
+
+.links p,
+.links a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  color: white;
+}
+
+.links {
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.nomeLogo {
+  margin-left: 50px;
+  color: white;
+}
+
+.logotipo2 {
+  position: absolute;
+  width: 24px;
+  height: 34px;
+  left: 130px;
+  top: 20px;
+  filter: drop-shadow(6px 8px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 1px;
+}
+
+.logo_menus {
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  position: absolute;
+  right: 390px;
+  top: 50px;
+}
+
+.text_menu {
+  position: absolute;
+  left: 49%; /* Define a posição horizontalmente */
+  top: 25%; /* Define a posição verticalmente */
+  transform: translate(-50%, -50%); /* Centraliza a div no centro da tela */
+  text-align: center;
+  color: white;
+  font-size: xx-large;
+}
+
+.text_menu h4,
+.text_menu h1 {
+  margin: 0;
+}
+
+.conteiner_funcoes_2 {
+  position: absolute;
+  left: 300px;
+  top: 240px;
+  display: flex;
+}
+
+.funcao button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 160px;
+  height: 150px;
+  background-color: #eaeaea;
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.funcao button :hover {
+  background-color: gray;
+}
+
+.funcao p,
+.funcao h2 {
+  margin: 0;
+  text-decoration: none;
+}
+
+.button_back {
+  position: absolute;
+  left: 72%;
+  top: 32%;
+  background-color: transparent;
+  border: none;
+  color: #dadada;
+  cursor: pointer;
+  font-size: 15px;
+}

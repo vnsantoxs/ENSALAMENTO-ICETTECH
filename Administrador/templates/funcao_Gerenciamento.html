@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/gerenciamento.css' %}" />
+    <title>Gerenciamento</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img
+          class="logotipo2"
+          src="{% static 'imagens/LogoicettechPB.png' %}"
+          alt=""
+        />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <p>Perfil</p>
+        <a href=""
+          ><img src="{% static 'imagens/Iconesprofessor2.png' %}" alt=""
+        /></a>
+      </div>
+    </nav>
+    <section class="Center">
+      <div>
+        <div class="text_menu">
+          <h4>Área de</h4>
+          <h1>Gerenciamento</h1>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="conteiner_funcoes_2">
+        <a class="funcao" href="{% url 'gerenrenciamentodisiciplina' %}"
+          ><button>
+            <p>Gerenciar</p>
+            <h2>Disciplinas</h2>
+          </button></a
+        >
+        <a class="funcao" href="{% url 'gerenciamentocurso' %}">
+          <button>
+            <p>Gerenciar</p>
+            <h2>Cursos</h2>
+          </button></a
+        >
+        <a class="funcao" href="{% url 'gerenciamentoespacofisico' %}">
+          <button>
+            <p>Gerenciar</p>
+            <h2>Espaço Físico</h2>
+          </button></a
+        >
+        <a class="funcao" href="{% url 'gerenciamentograde' %}">
+          <button>
+            <p>Gerenciar</p>
+            <h2>Grade</h2>
+          </button></a
+        >
+      </div>
+    </section>
+    <div>
+      <button class="button_back">Voltar</button>
+    </div>
+  </body>
+</html>
