@@ -37,7 +37,28 @@
         <div>
           <table border="1">
             <tbody id="tbody">
-              <td></td>
+              <tr>
+                <th>Tipo</th>
+                <th>Dimensões</th>
+                <th>Capacidade</th>
+                <th>Bloco</th>
+                <th>Andar</th>
+                <th>Número</th>
+            </tr>
+              {% for espacofisico in espacofisico %}
+            <tr>
+                <td>{{ espacofisico.tipo_espaco_fisico }}</td>
+                <td>{{ espacofisico.dimencoes }}</td>
+                <td>{{ espacofisico.capacidade }}</td>
+                <td>{{ espacofisico.bloco }}</td>
+                <td>{{ espacofisico.andar }}</td>
+                <td>{{ espacofisico.numero }}</td>
+            </tr>
+              {% empty %}
+            <tr>
+              <td colspan="6">Nenhum espaço físico encontrado.</td>
+            </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

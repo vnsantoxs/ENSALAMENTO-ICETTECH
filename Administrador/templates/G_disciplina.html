@@ -37,7 +37,13 @@
         <div>
           <table border="1">
             <tbody id="tbody">
-              <td></td>
+              <td>
+                {% for disciplina in disciplina %}
+                    <li>{{ disciplina.nome_disciplina }}</li>
+                {% empty %}
+                    <li>Nenhuma disciplina encontrada.</li>
+                {% endfor %}
+              </td>
             </tbody>
           </table>
         </div>

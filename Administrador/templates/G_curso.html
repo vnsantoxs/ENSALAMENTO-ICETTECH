@@ -37,7 +37,11 @@
         <div>
           <table border="1">
             <tbody id="tbody">
-              <td></td>
+                {% for curso in cursos %}
+                    <li>{{ curso.nome }}</li>
+                {% empty %}
+                    <li>Nenhum curso encontrado.</li>
+                {% endfor %}
             </tbody>
           </table>
         </div>

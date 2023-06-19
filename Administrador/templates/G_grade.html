@@ -37,7 +37,22 @@
         <div>
           <table border="1">
             <tbody id="tbody">
-              <td></td>
+              <tr>
+                <th>Ano</th>
+                <th>Versão</th>
+                <th>Código</th>
+              </tr>
+                {% for grade in grade %}
+              <tr>
+                  <td>{{ grade.ano }}</td>
+                  <td>{{ grade.versao }}</td>
+                  <td>{{ grade.codigo }}</td>
+              </tr>
+                {% empty %}
+              <tr>
+                  <td colspan="3">Nenhuma grade encontrada.</td>
+              </tr>
+                {% endfor %}
             </tbody>
           </table>
         </div>
