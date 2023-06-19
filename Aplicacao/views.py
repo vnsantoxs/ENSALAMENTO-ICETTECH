@@ -37,6 +37,7 @@ class Cadastroadminview(TemplateView):
             siape = request.POST.get('siape')
             cargo = request.POST.get('cargo')
             comorbidade = request.POST.get('comorbidade') == 'sim'
+
             admin = Administrador.cadastrar_Administrador(nome_administrador=nome, telefone_administrador=telefone,
                                                           email_administrador=email,senha_administrador=senha,
                                                           siape_administrador=siape,cargo_administrador=cargo,
@@ -47,7 +48,25 @@ class Cadastroadminview(TemplateView):
                 return render(request, 'index.html')
 
 class Cadastroprofessorview(TemplateView):
-    template_name = 'cadastro_Professor.html'
+    def cadastrarprofessor(request):
+        if request.method == 'GET':
+            return render(request, 'cadastro_Professor.html')
+        else: 
+            nome = request.POST.get('Nome')
+            telefone = request.POST.get('telefone')
+            email = request.POST.get('email')
+            senha = request.POST.get('senha')
+            siape = request.POST.get('siape')
+            area_atuacao = request.POST.get('area')
+            comorbidade = request.POST.get('comorbidade', False)
+            
+            cadastro = Professor.cadastrar_Professor(nome=nome, telefone=telefone, email=email, senha=senha, siape=siape,
+                                area_atuacao=area_atuacao, comorbidade=comorbidade,  estado_professor=False)
+            if cadastro:
+                return render(request, 'Login.html')
+            else:
+                return render(request, 'index.html')
+
 
 class Registrarfeedbackview(TemplateView):
     template_name = 'registrar_Feedback.html'

@@ -14,16 +14,10 @@ class Professor(models.Model):
     estado_professor = models.BooleanField()
 
     @staticmethod
-    def cadastrar_Professor(id_professor, nome_professor, email_professor, senha_professor, siape_professor,
+    def cadastrar_Professor(nome_professor, email_professor, senha_professor, siape_professor,
                             area_atuacao_professor, comorbidade, estado_professor):
         try:
-            Professor.objects.get(id_professor=id_professor, nome_professor=nome_professor,
-                                  email_professor=email_professor, senha_professor=senha_professor,
-                                  siape_professor=siape_professor, area_atuacao_professor=area_atuacao_professor,
-                                  comorbidade=comorbidade, estado_professor=estado_professor)
-            return False
-        except Professor.DoesNotExist:
-            professor = Professor(id_professor=id_professor, nome_professor=nome_professor,
+            professor = Professor(nome_professor=nome_professor,
                                   email_professor=email_professor, senha_professor=senha_professor,
                                   siape_professor=siape_professor, area_atuacao_professor=area_atuacao_professor,
                                   comorbidade=comorbidade, estado_professor=estado_professor)
