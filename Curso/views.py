@@ -10,5 +10,7 @@ class cadastrarcursoview(TemplateView):
             curso = Curso.cadastrarCurso(codigo=codigo, nome=nome)
             if curso:
                 return render(request,'cadastro_curso.html')
+            else: 
+                return render(request, 'cadastro_curso.html')
         else:
             return render(request, 'cadastro_curso.html')

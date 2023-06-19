@@ -27,6 +27,7 @@
         <h1>disciplina</h1>
       </div>
       <form id="formulario_D" onsubmit="return Disciplina.salvar(event)">
+        {% csrf_token %}
         <h4>Cadastrar disciplina</h4>
         <div class="parametro">
           <div class="parametro_cadastro">

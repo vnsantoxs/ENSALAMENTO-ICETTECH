@@ -10,9 +10,6 @@ class Disciplina(models.Model):
     @staticmethod
     def cadastrarDisciplina(codigo, nome_disciplina, periodo_disciplina):
         try:
-            Disciplina.objects.get(codigo=codigo, nome_disciplina=nome_disciplina, periodo_disciplina=periodo_disciplina)
-            return False
-        except Disciplina.DoesNotExist:
             disciplina = Disciplina(
                 codigo=codigo,
                 nome_disciplina=nome_disciplina,
