@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/Aboutus.css' %}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nós</title>
+  </head>
+  <body id="fundo">
+    <header>
+      <h1>ICETTECH</h1>
+      <div id="imagem"><img src="{% static 'imagens/LogoIcetTech.png' %}" alt="" /></div>
+    </header>
+    <div id="titulo">
+      <h1>Equipe de Desenvolvimento ICETTECH</h1>
+      <br />
+    </div>
+    <div id="layout">
+      <div id="arthur">
+        <img id="portrait" src="{% static 'imagens/portraitarthut.png' %}" alt="" />
+        <h2 id="tamanho2">Arthur Maia</h2>
+        <p id="tamanho">
+          Atuou como desenvolvedor <br />
+          Front-End
+        </p>
+      </div>
+      <div id="felipe">
+        <img id="portrait" src="{% static 'imagens/portraitfelipe.png' %}" alt="" />
+        <h2 id="tamanho2">Felipe Maklouf</h2>
+        <p id="tamanho">
+          Atuou como desenvolvedor <br />
+          Front-End
+        </p>
+      </div>
+      <div id="vini">
+        <img id="portrait" src="{% static 'imagens/portraitvini.png' %}" alt="" />
+        <h2 id="tamanho2">Vinicius Melchior</h2>
+        <p id="tamanho">
+          Atuou como desenvolvedor <br />
+          Back-End
+        </p>
+      </div>
+    </div>
+    <div id="divisao"></div>
+    <div id="baixo">
+      <div><img id="imagem2" src="{% static 'imagens/LogoIcetTechAU.png' %}" alt="" /></div>
+      <div class="bt"><a class="bt1" href="">Voltar</a></div>
+    </div>
+  </body>
+</html>

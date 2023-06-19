@@ -80,3 +80,6 @@ class Registrarfeedbackview(TemplateView):
                 return render(request, 'menu_Professor.html')
             else:
                 return render(request, 'registrar_Feedback.html')
+
+def aboutus(request):
+    return render(request,'aboutus.html')
