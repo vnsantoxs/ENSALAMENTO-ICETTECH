@@ -4,6 +4,7 @@ from Curso.models import Curso
 from Grade.models import Grade
 from EspacoFisico.models import EspacoFisico
 from Disciplina.models import Disciplina
+from Aplicacao.models import Feedback
 
 class gerennciamento(TemplateView):
     template_name = 'funcao_Gerenciamento.html'
@@ -24,6 +25,8 @@ class gerennciamento(TemplateView):
         grade = Grade.objects.all()
         return render(request, 'G_grade.html', {'grade': grade})
     
-class feedbackview(TemplateView):
-    template_name = 'visualizar_Feedback.html'
+class feedbackviews(TemplateView):
+    def feedbackview(request):
+        feedback = Feedback.objects.all()
+        return render(request, 'visualizar_Feedback.html', {'feedback': feedback})
     
