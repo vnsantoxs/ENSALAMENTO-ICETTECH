@@ -10,9 +10,6 @@ class Grade(models.Model):
     @staticmethod
     def cadastrarGrade(ano, versao, codigo):
         try:
-            Grade.objects.get(ano=ano, versao=versao, codigo=codigo)
-            return False
-        except Grade.DoesNotExist:
             grade = Grade(ano=ano, versao=versao, codigo=codigo)
             grade.save()
             return True
