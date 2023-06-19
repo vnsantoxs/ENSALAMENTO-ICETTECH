@@ -11,5 +11,5 @@ urlpatterns = [
     path('tipocadastro/', Tipocadastroview.as_view(), name='tipocadastro'),
     path('cadastroadministrador/', Aplicacao.Cadastroadminview.cadastraradministrador, name='cadastroadministrador'),
     path('cadastroprofessor/', Cadastroprofessorview.as_view(), name='cadastroprofessor'),
-    path('registrarfeedback/',Registrarfeedbackview.as_view(), name='registrarfeedback'),
+    path('registrarfeedback/',Registrarfeedbackview.registrarfeedback, name='registrarfeedback'),
 ]

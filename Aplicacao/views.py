@@ -4,6 +4,7 @@ from Administrador.models import Administrador
 from Professor.models import Professor
 import os
 from pathlib import Path
+from .models import Feedback
 
 class Indexview(TemplateView):
     template_name = 'index.html'
@@ -69,4 +70,13 @@ class Cadastroprofessorview(TemplateView):
 
 
 class Registrarfeedbackview(TemplateView):
-    template_name = 'registrar_Feedback.html'
+    def registrarfeedback(request):
+        if request.method == 'GET':
+            return render(request, 'registrar_Feedback.html')
+        else: 
+            feed = request.POST.get('feedback')
+            feedback = Feedback.salvarfeedback(feedback=feed)
+            if feedback:
+                return render(request, 'menu_Professor.html')
+            else:
+                return render(request, 'registrar_Feedback.html')
