@@ -10,9 +10,6 @@ class Curso(models.Model):
     @staticmethod
     def cadastrarCurso(codigo, nome):
         try:
-            Curso.objects.get(codigo=codigo, nome=nome)
-            return False
-        except Curso.DoesNotExist:
             curso = Curso(codigo=codigo, nome=nome)
             curso.save()
             return True

@@ -13,10 +13,6 @@ class EspacoFisico(models.Model):
     @staticmethod
     def cadastrarEspacoFisico(tipo_espaco_fisico, dimensoes, capacidade, bloco, andar, numero):
         try:
-            EspacoFisico.objects.get(tipo_espaco_fisico=tipo_espaco_fisico, dimensoes=dimensoes, capacidade=capacidade,
-                                     bloco=bloco, andar=andar, numero=numero)
-            return False
-        except EspacoFisico.DoesNotExist:
             espaco_fisico = EspacoFisico(
                 tipo_espaco_fisico=tipo_espaco_fisico,
                 dimensoes=dimensoes,

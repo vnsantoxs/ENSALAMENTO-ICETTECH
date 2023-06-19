@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/C_curso.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/gerenciarcurso.css' %}" />
     <title>Cadastrar curso</title>
   </head>
   <body>
@@ -27,7 +27,8 @@
         <p>Gerenciar</p>
         <h1>cursos</h1>
       </div>
-      <form action="">
+      <form action="{% url 'cadastrarcurso' %}" method="post">
+        {% csrf_token %}
         <h4>Cadastrar Curso</h4>
         <div class="parametro">
           <div class="parametro_cadastro">
@@ -39,8 +40,8 @@
             <input type="text" name="codigo" id="campo_codigo" />
           </div>
           <div class="parametro_cadastro">
-            <label for="matriz">Matriz:</label>
-            <input type="text" name="matriz" id="campo_matriz" />
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="campo_nome" />
           </div>
         </div>
         <div class="subimit">
