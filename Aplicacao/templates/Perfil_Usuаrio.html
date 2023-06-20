@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/perfil_usuarios.css' %}" />
+    <title>Perfil do Usuário</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="Logo" />
+        <h3 class="nomeLogo">Icettech</h3> 
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="./Perfil_Usuário.html">
+          <img
+            class="perfil-icon"
+            src="{% static 'imagens/iconeprofessor.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+    <div class="container">
+      <h1 class="titulo">Perfil do Usuário</h1>
+      <form id="perfil_form" class="perfil">
+        <div class="campo1">
+          <div class="campo">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="campo_nome" value="Nome Completo" readonly />
+          </div>
+          <div class="campo">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="campo_telefone" value="Telefone" readonly />
+          </div>
+          <div class="campo">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="campo_email"
+              value="email@example.com"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="campo1">
+          <div class="campo">
+            <label for="senha">Senha:</label>
+            <input type="password" id="campo_senha" value="********" readonly />
+          </div>
+          <div class="campo">
+            <label for="siape">SIAPE:</label>
+            <input type="text" id="campo_siape" value="1234567890" readonly />
+          </div>
+          <div class="campo">
+            <label for="cargo">Cargo/Área:</label>
+            <input type="text" id="campo_cargo" value="Cargo/Área" readonly />
+          </div>
+        </div>
+        <div class="campo">
+          <label for="comorbidade">Você tem alguma comorbidade?</label>
+          <div class="campo_marque">
+            <label for="comorbidade_sim">Sim</label>
+            <input type="checkbox" id="comorbidade_sim" checked disabled />
+            <label for="comorbidade_nao">Não</label>
+            <input type="checkbox" id="comorbidade_nao" disabled />
+          </div>
+        </div>
+        <div class="botoes">
+          <button
+            type="button"
+            id="botao_atualizar"
+            onclick="habilitarEdicao()"
+          >
+            Atualizar
+          </button>
+          <button
+            type="button"
+            id="botao_salvar"
+            onclick="salvarAlteracoes()"
+            style="display: none"
+          >
+            Salvar Alterações
+          </button>
+          <button type="button" id="botao_excluir">Excluir Perfil</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      function habilitarEdicao() {
+        var campos = document.querySelectorAll("input[readonly]");
+        campos.forEach(function (campo) {
+          campo.removeAttribute("readonly");
+        });
+
+        var checkboxComorbidadeSim = document.getElementById("comorbidade_sim");
+        var checkboxComorbidadeNao = document.getElementById("comorbidade_nao");
+        checkboxComorbidadeSim.disabled = false;
+        checkboxComorbidadeNao.disabled = false;
+
+        checkboxComorbidadeSim.addEventListener("change", function () {
+          if (checkboxComorbidadeSim.checked) {
+            checkboxComorbidadeNao.checked = false;
+            checkboxComorbidadeNao.disabled = true;
+          } else {
+            checkboxComorbidadeNao.disabled = false;
+          }
+        });
+
+        checkboxComorbidadeNao.addEventListener("change", function () {
+          if (checkboxComorbidadeNao.checked) {
+            checkboxComorbidadeSim.checked = false;
+            checkboxComorbidadeSim.disabled = true;
+          } else {
+            checkboxComorbidadeSim.disabled = false;
+          }
+        });
+
+        var botaoAtualizar = document.getElementById("botao_atualizar");
+        botaoAtualizar.style.display = "none";
+
+        var botaoSalvar = document.getElementById("botao_salvar");
+        botaoSalvar.style.display = "block";
+      }
+
+      function salvarAlteracoes() {
+        var form = document.getElementById("perfil_form");
+        form.submit();
+      }
+    </script>
+  </body>
+</html>

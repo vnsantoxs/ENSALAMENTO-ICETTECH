@@ -83,3 +83,6 @@ class Registrarfeedbackview(TemplateView):
 
 def aboutus(request):
     return render(request,'aboutus.html')
+
+def perfilview(request):
+    return render(request, 'Perfil_Usuаrio.html')

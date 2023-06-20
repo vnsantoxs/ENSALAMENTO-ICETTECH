@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/G.Reserva.css' %}" />
+    <title>Reserva de Sala</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="Logo" />
+        <h3 class="nomeLogo">Icettech</h3>
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="{% url 'perfil' %}">
+          <img
+            class="perfil-icon"
+            src="{% static 'imagens/iconeprofessor.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <form id="reservaForm">
+        <h1>Gerenciar reservas</h1>
+        <div class="campos">
+          <label for="diaSemana">Dia da Semana:</label>
+          <select id="diaSemana" required>
+            <option value="">Selecione o dia da semana</option>
+            <option value="segunda">Segunda-feira</option>
+            <option value="terca">Terça-feira</option>
+            <option value="quarta">Quarta-feira</option>
+            <option value="quinta">Quinta-feira</option>
+            <option value="sexta">Sexta-feira</option>
+          </select>
+
+          <label for="horario">Horário:</label>
+          <select id="horario" required>
+            <option value="">Selecione o horário</option>
+            <option value="8-10">8:00 - 10:00</option>
+            <option value="10-12">10:00 - 12:00</option>
+            <option value="14-16">14:00 - 16:00</option>
+            <option value="16-18">16:00 - 18:00</option>
+            <option value="18-20">18:00 - 20:00</option>
+            <option value="20-22">20:00 - 22:00</option>
+          </select>
+
+          <label for="salaRadio">Sala</label>
+          <input type="radio" id="salaRadio" name="tipo" value="sala" checked />
+          <label for="labRadio">Laboratório</label>
+          <input type="radio" id="labRadio" name="tipo" value="laboratorio" />
+
+          <div id="salaGroup">
+            <label for="sala">Sala:</label>
+            <select id="sala">
+              <option value="">Selecione a sala</option>
+            </select>
+          </div>
+          <div id="labGroup" style="display: none">
+            <label for="laboratorio">Laboratório:</label>
+            <select id="laboratorio">
+              <option value="">Selecione o laboratório</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit">Reservar</button>
+      </form>
+      <div class="reservations">
+        <h2>Resumo:</h2>
+        <div class="table-wrapper">
+          <table id="reservasTable">
+            <tr>
+              <th>Reserva</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        var salaSelect = document.getElementById("sala");
+        var laboratorioSelect = document.getElementById("laboratorio");
+
+        var salasDisponiveis = ["Sala 1", "Sala 2", "Sala 3"];
+        var labsDisponiveis = [
+          "Laboratório 1",
+          "Laboratório 2",
+          "Laboratório 3",
+        ];
+
+        salasDisponiveis.forEach(function (sala) {
+          var option = document.createElement("option");
+          option.value = sala;
+          option.text = sala;
+          salaSelect.appendChild(option);
+        });
+
+        labsDisponiveis.forEach(function (lab) {
+          var option = document.createElement("option");
+          option.value = lab;
+          option.text = lab;
+          laboratorioSelect.appendChild(option);
+        });
+      });
+
+      var salaGroup = document.getElementById("salaGroup");
+      var labGroup = document.getElementById("labGroup");
+
+      document.querySelectorAll('input[name="tipo"]').forEach(function (radio) {
+        radio.addEventListener("change", function () {
+          if (this.value === "sala") {
+            salaGroup.style.display = "block";
+            labGroup.style.display = "none";
+          } else {
+            salaGroup.style.display = "none";
+            labGroup.style.display = "block";
+          }
+        });
+      });
+
+      var nomeUsuarioLogado = "Nome do Usuário";
+
+      document
+        .getElementById("reservaForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          var diaSemana = document.getElementById("diaSemana").value;
+          var horario = document.getElementById("horario").value;
+          var tipo = document.querySelector('input[name="tipo"]:checked').value;
+          var sala =
+            tipo === "sala" ? document.getElementById("sala").value : "";
+          var laboratorio =
+            tipo === "laboratorio"
+              ? document.getElementById("laboratorio").value
+              : "";
+
+          var reservaInfo = diaSemana + " - " + horario + " - ";
+
+          if (tipo === "sala") {
+            reservaInfo += sala;
+          } else {
+            reservaInfo += laboratorio;
+          }
+
+          reservaInfo += " - " + nomeUsuarioLogado;
+
+          var reservaTable = document.getElementById("reservasTable");
+          var newRow = reservaTable.insertRow();
+
+          var cell = newRow.insertCell();
+          cell.appendChild(document.createTextNode(reservaInfo));
+
+          document.getElementById("diaSemana").value = "";
+          document.getElementById("horario").value = "";
+          document.getElementById("sala").value = "";
+          document.getElementById("laboratorio").value = "";
+
+          alert("Reserva feita com sucesso!");
+        });
+    </script>
+  </body>
+</html>
