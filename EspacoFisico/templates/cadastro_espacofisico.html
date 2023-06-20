@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/C_espacofisico.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cadastrarespaco-fisico.css' %}" />
     <title>Cadastrar espaço físico</title>
   </head>
   <body>
@@ -54,6 +54,13 @@
           <div class="parametro_cadastro">
             <label for="n_bloco">Nome do bloco:</label>
             <input type="text" name="nome_bloco" id="campo_nome_bloco" />
+          </div>
+          <div class= "parametro_cadastro">
+            <label for= "tipo_EF">Tipo:</label>
+            <select id= "tipo_EF" required>
+              <option value="">Sala</option>
+              <option value="">Laboratório</option>
+            </select>
           </div>
         </div>
         <div class="subimit">

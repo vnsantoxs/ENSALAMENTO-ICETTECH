@@ -10,7 +10,7 @@ urlpatterns = [
     path('login/',Loginview.login, name='login'),
     path('tipocadastro/', Tipocadastroview.as_view(), name='tipocadastro'),
     path('cadastroadministrador/', Aplicacao.Cadastroadminview.cadastraradministrador, name='cadastroadministrador'),
-    path('cadastroprofessor/', Cadastroprofessorview.as_view(), name='cadastroprofessor'),
+    path('cadastroprofessor/', Cadastroprofessorview.cadastrarprofessor, name='cadastroprofessor'),
     path('registrarfeedback/',Registrarfeedbackview.registrarfeedback, name='registrarfeedback'),
     path('aboutus/', Aplicacao.aboutus, name='aboutus')
 ]

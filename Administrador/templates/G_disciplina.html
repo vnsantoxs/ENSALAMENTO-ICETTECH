@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/gerenciardisciplina.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/gerenciardisciplin.css' %}" />
     <title>Disciplinas</title>
   </head>
   <body>
@@ -34,16 +34,21 @@
         <h1>disciplinas</h1>
       </div>
       <div class="conteiner">
-        <div>
+        <div class= "table-wrapper">
           <table border="1">
             <tbody id="tbody">
-              <td>
-                {% for disciplina in disciplina %}
-                    <li>{{ disciplina.nome_disciplina }}</li>
-                {% empty %}
-                    <li>Nenhuma disciplina encontrada.</li>
-                {% endfor %}
-              </td>
+              <tr>
+                <th>Disciplinas:</th>
+              </tr>
+              {% for disciplina in disciplina %}
+              <tr>
+                  <td>{{ disciplina.nome_disciplina }}</td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="3">Nenhuma disciplina encontrada.</td>
+              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -53,7 +58,7 @@
       </div>
     </section>
     <div class="button-Ad">
-      <a href="../HTML/cadastro_disciplina.html"
+      <a href="{% url 'cadastrardisciplina' %}"
         ><button>Adicionar disciplina</button></a
       >
     </div>

@@ -117,7 +117,7 @@ body {
     align-items: center;
     width: 390px;
   
-    font-style: normal;
+    font-style: normal; 
     font-weight: 400;
     font-size: 20px;
     line-height: 27px;
@@ -180,7 +180,7 @@ body {
     display: flex;
     position: absolute;
     left: 50%;
-    top: 55%;
+    top: 60%;
     transform: translate(-50%, -50%);
   
     justify-content: space-between;
@@ -191,8 +191,8 @@ body {
   .identify_text1 {
     display: flex;
     position: absolute;
-    left: 61%;
-    top: 55%;
+    left: 58%;
+    top: 60%;
     transform: translate(-50%, -50%);
   
     justify-content: space-between;

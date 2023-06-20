@@ -5,7 +5,7 @@ body {
   height: 100vh;
   overflow-y: hidden;
   font-style: normal;
-}
+} 
 
 .logotipo2 {
   position: absolute;
@@ -72,7 +72,7 @@ body {
   font-size: 24px;
   margin-bottom: 20px;
   color: white;
-  left: 160px;
+  left: 220px;
   top: 110px;
 }
 
@@ -84,7 +84,7 @@ body {
 .conteiner {
   position: absolute;
   top: 180px;
-  left: 160px;
+  left: 220px;
   box-sizing: border-box;
   width: 76%;
   height: 50%;
@@ -103,10 +103,10 @@ body {
   cursor: pointer;
 }
 
-.button-Ad {
+.button-Ad { 
   position: absolute;
   top: 80%;
-  left: 38%;
+  left: 42%;
 }
 
 .button-Ad button {
@@ -116,4 +116,27 @@ body {
   border: none;
   width: 285px;
   height: 40px;
+}
+
+table{
+  width: 100%;
+}
+
+th, td{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid white;
+}
+
+th{
+  background-color: #4caf50;
+}
+
+.table-wrapper{
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.table-wrapper table{
+  width: 100%;
 }

@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/gerenciargrade.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/gerenciargrad.css' %}" />
     <title>Grade</title>
   </head>
   <body>
@@ -26,7 +26,7 @@
         <a href=""
           ><img src="{% static 'imagens/Iconesprofessor2.png' %}" alt=""
         /></a>
-      </div>
+      </div> 
     </nav>
     <section>
       <div class="title">
@@ -34,8 +34,8 @@
         <h1>Grade</h1>
       </div>
       <div class="conteiner">
-        <div>
-          <table border="1">
+        <div class= "table-wrapper">
+          <table>
             <tbody id="tbody">
               <tr>
                 <th>Ano</th>
@@ -45,7 +45,7 @@
                 {% for grade in grade %}
               <tr>
                   <td>{{ grade.ano }}</td>
-                  <td>{{ grade.versao }}</td>
+                  <td>{{ grade.versao }}</td> 
                   <td>{{ grade.codigo }}</td>
               </tr>
                 {% empty %}
@@ -62,7 +62,7 @@
       </div>
     </section>
     <div class="button-Ad">
-      <a href="../HTML/cadastro_grade.html"><button>Adicionar grade</button></a>
+      <a href="{% url 'cadastrargrade' %}"><button>Adicionar grade</button></a>
     </div>
   </body>
 </html>

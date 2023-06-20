@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/gerenciarcurso.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/gerenciarcurs.css' %}" />
     <title>Curso</title>
   </head>
   <body>
@@ -34,13 +34,20 @@
         <h1>cursos</h1>
       </div>
       <div class="conteiner">
-        <div>
-          <table border="1">
+        <div class= "table-wrapper"> 
+          <table>
             <tbody id="tbody">
-                {% for curso in cursos %}
-                    <li>{{ curso.nome }}</li>
-                {% empty %}
-                    <li>Nenhum curso encontrado.</li>
+              <tr>
+                <th>Cursos:</th>
+              </tr>
+              {% for curso in curso%}
+              <tr>
+                <td>{{ curso.nome }}</td>
+              </tr>
+              {% empty %}
+              <tr>
+                  <td colspan="3">Nenhuma grade encontrada.</td>
+              </tr>
                 {% endfor %}
             </tbody>
           </table>

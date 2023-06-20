@@ -22,4 +22,4 @@ class Cadastrarespacofisicoview(TemplateView):
             else:
                 return render(request, 'cadastro_espacofisico.html')
         else:
-            return render(request, 'cadastrar_espaco_fisico.html')
+            return render(request, 'cadastro_espacofisico.html')

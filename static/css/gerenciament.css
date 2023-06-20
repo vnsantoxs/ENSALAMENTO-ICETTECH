@@ -11,8 +11,8 @@ body {
   position: absolute;
   width: 24px;
   height: 34px;
-  left: 85px;
-  top: 10px;
+  left: 130px;
+  top: 20px;
   filter: drop-shadow(6px 8px 4px rgba(0, 0, 0, 0.25));
   border-radius: 1px;
 }
@@ -45,6 +45,7 @@ body {
 .links {
   margin: 5px;
   color: white;
+  cursor: pointer;
 }
 
 .nomeLogo {
@@ -54,7 +55,7 @@ body {
 
 .logotipo2 {
   position: absolute;
-  width: 24px;
+  width: 24px; 
   height: 34px;
   left: 130px;
   top: 20px;
@@ -73,10 +74,10 @@ body {
 
 .text_menu {
   position: absolute;
-  left: 40%; /* Define a posição horizontalmente */
+  left: 49%; /* Define a posição horizontalmente */
   top: 25%; /* Define a posição verticalmente */
   transform: translate(-50%, -50%); /* Centraliza a div no centro da tela */
-  text-align: left;
+  text-align: center;
   color: white;
   font-size: xx-large;
 }
@@ -86,18 +87,10 @@ body {
   margin: 0;
 }
 
-.conteiner_funcoes {
-  position: absolute;
-  left: 230px;
-  top: 400px;
-  display: flex;
-}
-
 .conteiner_funcoes_2 {
-  position: absolute;
-  left: 400px;
-  top: 400px;
   display: flex;
+  justify-content: center;
+  margin-top: 300px;
 }
 
 .funcao button {
@@ -124,4 +117,15 @@ body {
 .funcao h2 {
   margin: 0;
   text-decoration: none;
+}
+
+.button_back {
+  position: absolute;
+  left: 65%;
+  top: 35%;
+  background-color: transparent;
+  border: none;
+  color: #dadada;
+  cursor: pointer;
+  font-size: 15px;
 }

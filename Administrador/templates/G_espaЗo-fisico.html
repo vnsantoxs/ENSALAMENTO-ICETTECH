@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/gerenciarespacofisico.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/gerenciarespacofisic.css' %}" />
     <title>Espaços-físicos</title>
   </head>
   <body>
@@ -34,8 +34,8 @@
         <h1>Espaço-físico</h1>
       </div>
       <div class="conteiner">
-        <div>
-          <table border="1">
+        <div class= "table-wrapper">
+          <table>
             <tbody id="tbody">
               <tr>
                 <th>Tipo</th>
@@ -68,7 +68,7 @@
       </div>
     </section>
     <div class="button-Ad">
-      <a href="../HTML/cadastro_espaço-fisico.html"
+      <a href="{% url 'cadastrarespacosisico' %}"
         ><button>Adicionar Espaço-físico</button></a
       >
     </div>
