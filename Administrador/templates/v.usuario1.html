@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/v.usuario1.css' %}" />
+    <title>Visualizar usuários</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="Logo" />
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="{% url 'perfil' %}">
+          <img
+            class="perfil-icon"
+            src="{% static 'imagens/iconeadministrador.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+    <div class="urna">
+      <h1>Visualizar usuários</h1>
+      <div class="urna-container">
+        <div class="dados-usuario">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" value="John Doe" readonly />
+          <label for="siape">SIAPE:</label>
+          <input type="text" id="siape" value="123456789" readonly />
+          <label for="data">Telefone:</label>
+          <input type="text" id="telefone" value="(xx) xxxxxxxx" readonly />
+          <label for="sala">email:</label>
+          <input type="email" id="email" value="JohnDoe@ufam.com" readonly />
+          <label for="bloco">Área/Cargo:</label>
+          <input type="text" id="área" value="Coordenador" readonly />
+          <label for="disciplina">Senha:</label>
+          <input type="password" id="senha" value="carro" readonly />
+        </div>
+        <div class="mensagem">
+          <label for="motivo">Mensagem:</label>
+          <textarea id="motivo" readonly>Dados não estão corretos.</textarea>
+          <div class="botoes-aprovacao">
+            <button onclick="aprovarMensagem()">Aprovar</button>
+            <button onclick="desaprovarMensagem()">Desaprovar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function aprovarMensagem() {
+        var motivo = document.getElementById("motivo").value;
+        console.log("Mensagem Aprovada:", motivo);
+      }
+
+      function desaprovarMensagem() {
+        var motivo = document.getElementById("motivo").value;
+        console.log("Mensagem Desaprovada:", motivo);
+      }
+    </script>
+  </body>
+</html>

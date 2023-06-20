@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/G_Ensalamento.css' %}" />
+    <title>Ensalamento</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="Logo" />
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="{% url 'perfil' %}">
+          <img
+            class="perfil-icon"
+            src="{% static 'imagens/iconeadministrador.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+
+    <h1>Gerar Ensalamento</h1>
+
+    <section>
+      <form>
+        <div class="form-column">
+          <div class="form-group">
+            <label for="horario">Horário:</label>
+            <select id="horario">
+              <option value="08 - 10">08 - 10</option>
+              <option value="10 - 11">10 - 11</option>
+              <option value="11 - 12">11 - 12</option>
+              <option value="14 - 16">14 - 16</option>
+              <option value="16 - 18">16 - 18</option>
+              <option value="18 - 20">18 - 20</option>
+              <option value="20 - 22">20 - 22</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="disciplina">Disciplina:</label>
+            <select id="disciplina">
+              <option value="">Selecione uma disciplina</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <div class="form-group">
+            <label for="dia">Dias da semana:</label>
+            <select id="dia">
+              <option value="Segunda-feira">Segunda-feira</option>
+              <option value="Terça-feira">Terça-feira</option>
+              <option value="Quarta-feira">Quarta-feira</option>
+              <option value="Quinta-feira">Quinta-feira</option>
+              <option value="Sexta-feira">Sexta-feira</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="professor">Professor:</label>
+            <select id="professor">
+              <option value="">Selecione um professor</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="botões">
+          <button class="adc" type="button" onclick="adicionarEnsalamento()">
+            Adicionar
+          </button>
+          <button class="enviar" type="button" onclick="enviarEnsalamentos()">
+            Enviar
+          </button>
+        </div>
+      </form>
+
+      <div class="reservations">
+        <h2>Resumo:</h2>
+        <div class="table-container">
+          <table id="tabelaEnsalamento">
+            <tr>
+              <th>Alocação:</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Array para armazenar as combinações de ensalamento
+      var ensalamentos = [];
+
+      // Opções de disciplina
+      var disciplinas = ["Disciplina 1", "Disciplina 2", "Disciplina 3"];
+
+      // Opções de professor
+      var professores = ["Professor 1", "Professor 2", "Professor 3"];
+
+      // Função para preencher as opções de disciplina
+      function preencherOpcoesDisciplina() {
+        var selectDisciplina = document.getElementById("disciplina");
+
+        disciplinas.forEach(function (disciplina) {
+          var option = document.createElement("option");
+          option.text = disciplina;
+          option.value = disciplina;
+          selectDisciplina.appendChild(option);
+        });
+      }
+
+      // Função para preencher as opções de professor
+      function preencherOpcoesProfessor() {
+        var selectProfessor = document.getElementById("professor");
+
+        professores.forEach(function (professor) {
+          var option = document.createElement("option");
+          option.text = professor;
+          option.value = professor;
+          selectProfessor.appendChild(option);
+        });
+      }
+
+      // Chamar as funções de preenchimento das opções
+      preencherOpcoesDisciplina();
+      preencherOpcoesProfessor();
+
+      function adicionarEnsalamento() {
+        // Obter os valores selecionados pelos usuários
+        var horario = document.getElementById("horario").value;
+        var disciplina = document.getElementById("disciplina").value;
+        var dia = document.getElementById("dia").value;
+        var professor = document.getElementById("professor").value;
+
+        // Criar um objeto para representar a combinação de ensalamento
+        var novaCombinação = {
+          horario: horario,
+          disciplina: disciplina,
+          dia: dia,
+          professor: professor,
+        };
+
+        // Adicionar a combinação ao array de ensalamentos
+        ensalamentos.push(novaCombinação);
+
+        // Adicionar a linha à tabela de ensalamentos
+        var tabelaEnsalamento = document.getElementById("tabelaEnsalamento");
+        var newRow = tabelaEnsalamento.insertRow();
+
+        var cell1 = newRow.insertCell();
+        cell1.textContent =
+          horario + " " + disciplina + " " + dia + " " + professor;
+
+        // Limpar os campos do formulário
+        document.getElementById("horario").value = "";
+        document.getElementById("disciplina").value = "";
+        document.getElementById("dia").value = "";
+        document.getElementById("professor").value = "";
+      }
+
+      function enviarEnsalamentos() {
+        // Verificar se existem combinações de ensalamento para enviar
+        if (ensalamentos.length === 0) {
+          alert("Não há ensalamentos para enviar!");
+          return;
+        }
+
+        // Construir os dados do formulário
+        var formData = new FormData();
+        for (var i = 0; i < ensalamentos.length; i++) {
+          var ensalamento = ensalamentos[i];
+          formData.append("horarios[]", ensalamento.horario);
+          formData.append("disciplinas[]", ensalamento.disciplina);
+          formData.append("dias[]", ensalamento.dia);
+          formData.append("professores[]", ensalamento.professor);
+        }
+
+        // Configurar as opções da requisição
+        var requestOptions = {
+          method: "POST",
+          body: formData,
+        };
+
+        // Fazer a requisição para o backend
+        fetch("URL_DO_SEU_BACKEND", requestOptions)
+          .then(function (response) {
+            if (response.ok) {
+              alert("Ensalamentos enviados com sucesso!");
+
+              // Limpar a tabela de ensalamentos
+              var tabelaEnsalamento =
+                document.getElementById("tabelaEnsalamento");
+              tabelaEnsalamento.innerHTML = "";
+              var headerRow = tabelaEnsalamento.insertRow();
+              headerRow.innerHTML =
+                "<th>Horário</th><th>Disciplina</th><th>Dia</th><th>Professor</th>";
+
+              // Limpar o array de ensalamentos
+              ensalamentos = [];
+            } else {
+              throw new Error(
+                "Erro ao enviar ensalamentos. Por favor, tente novamente."
+              );
+            }
+          })
+          .catch(function (error) {
+            console.error(error);
+            alert("Erro ao enviar ensalamentos. Por favor, tente novamente.");
+          });
+      }
+    </script>
+  </body>
+</html>

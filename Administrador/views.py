@@ -30,3 +30,14 @@ class feedbackviews(TemplateView):
         feedback = Feedback.objects.all()
         return render(request, 'visualizar_Feedback.html', {'feedback': feedback})
     
+class Gerarensalamento(TemplateView):
+    template_name = 'Gerar_ensalamento.html'
+
+class Visualizarresevaview(TemplateView):
+    def visualizarreserva(request):
+        return render(request, 'v.Reserva2.html')
+    
+class Visualizarusuarioview(TemplateView):
+    def visualizarusuario(request):
+        return render(request, 'v.usuario1.html')
+    

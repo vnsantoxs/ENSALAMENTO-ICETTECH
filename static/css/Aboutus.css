@@ -65,6 +65,7 @@ br {
 #baixo {
   display: flex;
   justify-content: space-between;
+  margin-top: 180x;
 }
 .bt {
   margin-right: 70px;

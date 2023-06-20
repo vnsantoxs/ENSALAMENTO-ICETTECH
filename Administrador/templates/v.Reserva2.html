@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/v.Reserva2.css' %}" />
+    <title>Visualizar reservas</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="Logo" />
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="{% url 'perfil' %}">
+          <img
+            class="perfil-icon"
+            src="{% static 'imagens/iconeadministrador.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+    <div class="urna">
+      <h1>Informações sobre a reserva</h1>
+      <div class="urna-container">
+        <div class="dados-usuario">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" value="John Doe" readonly />
+          <label for="siape">SIAPE:</label>
+          <input type="text" id="siape" value="123456789" readonly />
+          <label for="data">Data da reserva:</label>
+          <input type="text" id="data" value="2023-06-18" readonly />
+          <label for="sala">Sala:</label>
+          <input type="text" id="sala" value="A101" readonly />
+          <label for="bloco">Bloco:</label>
+          <input type="text" id="bloco" value="B" readonly />
+          <label for="disciplina">Disciplina:</label>
+          <input type="text" id="disciplina" value="Matemática" readonly />
+        </div>
+        <div class="mensagem">
+          <label for="motivo">Mensagem:</label>
+          <textarea id="motivo" readonly>
+Dados da reserva confirmados. Aguardando aprovação.</textarea
+          >
+          <div class="botoes-aprovacao">
+            <button onclick="aprovarMensagem()">Aprovar</button>
+            <button onclick="desaprovarMensagem()">Desaprovar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function aprovarMensagem() {
+        var motivo = document.getElementById("motivo").value;
+        console.log("Mensagem Aprovada:", motivo);
+      }
+
+      function desaprovarMensagem() {
+        var motivo = document.getElementById("motivo").value;
+        console.log("Mensagem Desaprovada:", motivo);
+      }
+    </script>
+  </body>
+</html>
