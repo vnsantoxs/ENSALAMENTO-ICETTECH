@@ -91,7 +91,7 @@ class Alocacao(models.Model):
         try:
             professor = Alocacao.objects.get(professor=id_professor)
             return True
-        except professor.DoesNotExist:
+        except Professor.DoesNotExist:
             return False
         except Exception:
             return False
