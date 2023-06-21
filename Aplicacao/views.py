@@ -54,15 +54,14 @@ class Cadastroprofessorview(TemplateView):
             return render(request, 'cadastro_Professor.html')
         else: 
             nome = request.POST.get('Nome')
-            telefone = request.POST.get('telefone')
             email = request.POST.get('email')
             senha = request.POST.get('senha')
             siape = request.POST.get('siape')
             area_atuacao = request.POST.get('area')
-            comorbidade = request.POST.get('comorbidade', False)
+            comorbidade = request.POST.get('comorbidade')
             
-            cadastro = Professor.cadastrar_Professor(nome=nome, telefone=telefone, email=email, senha=senha, siape=siape,
-                                area_atuacao=area_atuacao, comorbidade=comorbidade,  estado_professor=False)
+            cadastro = Professor.cadastrar_Professor(nome_professor=nome, email_professor=email, senha_professor=senha, siape_professor=siape,
+                                                    area_atuacao_professor=area_atuacao, comorbidade=comorbidade,  estado_professor=False)
             if cadastro:
                 return render(request, 'Login.html')
             else:
