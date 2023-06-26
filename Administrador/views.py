@@ -26,9 +26,13 @@ class gerennciamento(TemplateView):
         return render(request, 'G_grade.html', {'grade': grade})
     
 class feedbackviews(TemplateView):
-    def feedbackview(request):
+    def allfeedbackview(request):
         feedback = Feedback.objects.all()
-        return render(request, 'visualizar_Feedback.html', {'feedback': feedback})
+        return render(request, 'v.feedback1.html')
+    
+    def feedbackview(request):
+        return render(request, 'v.feedback2.html')
+
     
 class Gerarensalamento(TemplateView):
     template_name = 'Gerar_ensalamento.html'
