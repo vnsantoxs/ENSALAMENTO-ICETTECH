@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,8 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/v_usuario.css" />
-    <!-- <link rel="stylesheet" href="{% static 'css/v_usuario.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/v_usuario.css' %}">
 
     <title>Visualizar usuários</title>
   </head>
@@ -15,19 +14,16 @@
     <header class="header-container">
       <div class="header-left">
         <h3 class="nomeLogo">Icettech</h3>
-        <img class="logo" src="../imagens/LogoIcetTech 1.png" alt="Logo" />
-        <!-- <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" /> -->
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
       </div>
       <div class="header-right">
         <p>Perfil</p>
-        <a class="perfil" href="./Perfil_Usuário.html">
-          <!-- {% static 'css/Perfil.html' %} -->
+        <a class="perfil" href="{% url 'perfil' %}">
           <img
             class="perfil-icon"
-            src="../imagens/Icones 2 (2).png"
+            src="{% static 'imagens/iconeadministrador.png' %}"
             alt="Ícone Perfil"
           />
-          <!-- src="{% static 'imagens/Iconesprofessor2.png' %}" -->
         </a>
       </div>
     </header>
@@ -62,22 +58,5 @@
         </div>
       </div>
     </section>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Obtém a referência para a tabela
-        var tabela = document.getElementById("minha-tabela");
-
-        // Obtém todas as células <td> dentro da tabela
-        var tds = tabela.getElementsByTagName("td");
-
-        // Adiciona um evento de clique a cada célula <td>
-        for (var i = 0; i < tds.length; i++) {
-          tds[i].addEventListener("click", function () {
-            // Redireciona para a página desejada
-            window.location.href = "../HTML-faltando/v.usuario1.html";
-          });
-        }
-      });
-    </script>
   </body>
 </html>

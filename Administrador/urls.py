@@ -11,5 +11,6 @@ urlpatterns = [
     path('gerenciamento/grade/', gerennciamento.gerenciamentograde, name='gerenciamentograde'),
     path('gerarensalamento/', Gerarensalamento.as_view(), name='gerarensalamento'),
     path('visualizarreserva/', Visualizarresevaview.visualizarreserva, name= 'visualizarreserva'),
-    path('visualizarusuario/', Visualizarusuarioview.visualizarusuario, name='visualizarusuario')
+    path('visualizarusuarios/', Visualizarusuarioview.visualizarusuarios, name='visualizarusuarios'),
+    path('visualizarusuario/', Visualizarusuarioview.visualizarusuario, name='visualizarusuario'),
 ]

@@ -45,3 +45,5 @@ class Visualizarusuarioview(TemplateView):
     def visualizarusuario(request):
         return render(request, 'v.usuario1.html')
     
+    def visualizarusuarios(request):
+        return render(request, 'visualizar_Usuario.html')  
