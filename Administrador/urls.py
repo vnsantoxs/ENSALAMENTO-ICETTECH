@@ -10,6 +10,7 @@ urlpatterns = [
     path('gerenciamento/espacofisico/', gerennciamento.gerenciamentoespacofisico, name='gerenciamentoespacofisico'),
     path('gerenciamento/grade/', gerennciamento.gerenciamentograde, name='gerenciamentograde'),
     path('gerarensalamento/', Gerarensalamento.as_view(), name='gerarensalamento'),
+    path('visualizarreservas/', Visualizarresevaview.visualizarreservas, name= 'visualizarreservas'),
     path('visualizarreserva/', Visualizarresevaview.visualizarreserva, name= 'visualizarreserva'),
     path('visualizarusuarios/', Visualizarusuarioview.visualizarusuarios, name='visualizarusuarios'),
     path('visualizarusuario/', Visualizarusuarioview.visualizarusuario, name='visualizarusuario'),

@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/v_reserva1.css' %}">
+    <title>Visualizar reservas</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="{% url 'perfil' %}">
+          <img
+            class="perfil-icon"
+            src="{% static 'iconeadministrador.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+    <section>
+      <div class="conteiner-posicao">
+        <div class="conteiner">
+          <div class="title">
+            <div>
+              <h1>Visualizar</h1>
+              <h1>Reservas</h1>
+            </div>
+            <div>
+              <button class="back">Voltar</button>
+            </div>
+          </div>
+          <div class="conteiner-reserva">
+            <div class="tabela">
+              <table>
+                <tr class="top">
+                  <div class="th-content">
+                    <span class="bold-text">Mais recentes:</span>
+                  </div>
+                </tr>
+                <tbody id="minha-tabela">
+                  <tr>
+                    <td colspan="3">Nenhuma reserva encontrada.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

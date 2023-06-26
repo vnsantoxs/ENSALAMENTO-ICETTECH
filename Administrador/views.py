@@ -27,7 +27,6 @@ class gerennciamento(TemplateView):
     
 class feedbackviews(TemplateView):
     def allfeedbackview(request):
-        feedback = Feedback.objects.all()
         return render(request, 'v.feedback1.html')
     
     def feedbackview(request):
@@ -38,6 +37,9 @@ class Gerarensalamento(TemplateView):
     template_name = 'Gerar_ensalamento.html'
 
 class Visualizarresevaview(TemplateView):
+    def visualizarreservas(request):
+        return render(request, 'v.reserva1.html')
+    
     def visualizarreserva(request):
         return render(request, 'v.Reserva2.html')
     
