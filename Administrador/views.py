@@ -36,6 +36,10 @@ class feedbackviews(TemplateView):
 class Gerarensalamento(TemplateView):
     template_name = 'Gerar_ensalamento.html'
 
+class visualizarensalamento(TemplateView):
+    def visualizarensalamentoview(request):
+        return render(request, 'visualizar_Ensalamento.html')
+
 class Visualizarresevaview(TemplateView):
     def visualizarreservas(request):
         return render(request, 'v.reserva1.html')

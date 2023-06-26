@@ -1,0 +1,117 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/v_ensalamentos.css' %}">
+    <title>Visualizar ensalamento</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img class="logo" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
+      </div>
+      <div class="header-right">
+        <p>Perfil</p>
+        <a class="perfil" href="{% url 'perfil' %}">
+          <img
+            class="perfil-icon"
+            src="{% static 'iconeadministrador.png' %}"
+            alt="Ícone Perfil"
+          />
+        </a>
+      </div>
+    </header>
+    <section>
+      <div class="conteiner-posicao">
+        <div class="conteiner">
+          <div class="title">
+            <h1>Gerar</h1>
+            <h1>Ensalamento</h1>
+          </div>
+          <div class="conteiner-ensalamento">
+            <div class="tabela">
+              <table>
+                <tr class="top">
+                  <div class="th-content">
+                    <span class="bold-text">Salas Alocadas:</span>
+                    <button class="filtro">Filtro</button>
+                    <div id="filter-dialog" class="filter-dialog">
+                      <div class="filter-content">
+                        <h4>Opções de Filtro</h4>
+                        <label for="curso">Disciplinas:</label>
+                        <select id="curso">
+                          <option value="todos">Todos</option>
+                          <option value="engenharia-software">
+                            Engenharia de Software
+                          </option>
+                          <option value="eng-producao">
+                            Engenharia de Produção
+                          </option>
+                          <option value="sistema-informacao">
+                            Sistema de Informação
+                          </option>
+                          <option value="farmacia">Farmácia</option>
+                          <option value="biologia-quimica">
+                            Biologia e Química
+                          </option>
+                          <option value="agronomia">Agronomia</option>
+                          <option value="matematica-fisica-diurno">
+                            Matemática e Física (Diurno)
+                          </option>
+                          <option value="matematica-fisica-noturno">
+                            Matemática e Física (Noturno)
+                          </option>
+                          <option value="quimica-industrial">
+                            Química Industrial
+                          </option>
+                          <option value="eng-sanitaria">
+                            Engenharia Sanitária
+                          </option>
+                        </select>
+                        <label for="horario">Horário:</label>
+                        <select id="horario">
+                          <option value="todos">Todos</option>
+                          <option value="8-10">8 - 10</option>
+                          <option value="10-12">10 - 12</option>
+                        </select>
+                        <button onclick="applyFilter()">Aplicar Filtro</button>
+                        <button onclick="closeFilterWindow()">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </tr>
+                <tbody>
+                  <tr>
+                    <td>
+                      Seg - 08h ás 10h - Christophe Saint de Lima Xavier -
+                      Engenharia de Software 2 - Sala 204 - Bloco A
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Seg - 08h ás 10h - Christophe Saint de Lima Xavier -
+                      farmacia - Sala 204 - Bloco A
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="botões-posição">
+        <div class="botões">
+          <button class="btn">Baixar PDF</button>
+        </div>
+        <div>
+          <button class="btn">Finalizar</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
