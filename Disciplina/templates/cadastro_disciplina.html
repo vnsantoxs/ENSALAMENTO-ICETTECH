@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/cadastrardisciplina.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cadastrardisciplinas.css' %}" />
     <title>Cadastrar disciplina</title>
   </head>
   <body>
@@ -37,6 +37,39 @@
           <div class="parametro_cadastro">
             <label for="telefone">Código:</label>
             <input type="text" name="codigo" id="campo_codigo" />
+          </div>
+          <div class="parametro_cadastro">
+            <label for="periodo">Período:</label>
+            <select name="periodo" id="periodo">
+              <option value="1">1º Período</option>
+              <option value="2">2º Período</option>
+              <option value="3">3º Período</option>
+              <option value="4">4º Período</option>
+              <option value="5">5º Período</option>
+              <option value="6">6º Período</option>
+              <option value="7">7º Período</option>
+              <option value="8">8º Período</option>
+              <option value="9">9º Período</option>
+              <option value="10">10º Período</option>
+              <option value="11">11º Período</option>
+              <option value="12">12º Período</option>
+              <option value="13">13º Período</option>
+              <option value="14">14º Período</option>
+              <option value="15">15º Período</option>
+            </select>
+          </div>
+          <div class="parametro_cadastro">
+            <label for="tipo">Tipo:</label>
+            <select name="tipo" id="tipo">
+              <option value="pratica">Prática</option>
+              <option value="teorica">Teórica</option>
+            </select>
+          </div>
+          <div class="parametro_cadastro">
+            <label for="grade">Grade:</label>
+            <select name="grade" id="grade">
+              <option value="">sem grade</option>
+            </select>
           </div>
         </div>
         <div class="subimit">
