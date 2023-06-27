@@ -1,7 +1,7 @@
 from django.db import models
 
 class Disciplina(models.Model):
-    id_disciplina = models.IntegerField(primary_key=True)
+    id_disciplina = models.AutoField(primary_key=True)
     codigo = models.CharField(max_length=6)
     nome_disciplina = models.CharField(max_length=20)
     periodo_disciplina = models.IntegerField()

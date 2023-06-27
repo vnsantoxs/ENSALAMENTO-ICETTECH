@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Grade(models.Model):
-    id_grade = models.IntegerField(primary_key=True)
+    id_grade = models.AutoField(primary_key=True)
     ano = models.IntegerField(null=False)
     versao = models.CharField(max_length=12)
     codigo = models.CharField(max_length=6)

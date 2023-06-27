@@ -2,7 +2,7 @@ from django.db import models
 
 
 class EspacoFisico(models.Model):
-    id_espaco_fisico = models.IntegerField(primary_key=True)
+    id_espaco_fisico = models.AutoField(primary_key=True)
     tipo_espaco_fisico = models.CharField(max_length=15,)
     dimencoes = models.CharField(max_length=15)
     capacidade = models.IntegerField()

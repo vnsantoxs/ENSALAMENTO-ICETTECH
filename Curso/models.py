@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Curso(models.Model):
-    id_curso = models.IntegerField(primary_key=True)
+    id_curso = models.AutoField(primary_key=True)
     codigo = models.CharField(max_length=6)
     nome = models.CharField(max_length=30)
 

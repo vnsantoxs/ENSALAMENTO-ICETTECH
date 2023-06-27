@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 
 class Professor(models.Model):
-    id_professor = models.IntegerField(primary_key=True)
+    id_professor = models.AutoField(primary_key=True)
     nome_professor = models.CharField(max_length=60)
     email_professor = models.EmailField()
     senha_professor = models.CharField(max_length=20)
