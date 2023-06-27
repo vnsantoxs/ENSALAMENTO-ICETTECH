@@ -46,7 +46,12 @@
     <div id="divisao"></div>
     <div id="baixo">
       <div><img id="imagem2" src="{% static 'imagens/LogoIcetTechAU.png' %}" alt="" /></div>
-      <div class="bt"><a class="bt1" href="">Voltar</a></div>
+      <div class="bt"><a class="bt1" onclick="voltar()">Voltar</a></div>
     </div>
+    <script>
+      function voltar() {
+        window.history.back();
+      }
+    </script>
   </body>
 </html>

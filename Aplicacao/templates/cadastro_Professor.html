@@ -29,17 +29,14 @@
         <h2>Cadastro</h2>
         <hr />
       </div>
-      <form action="">
+      <form action="{% url 'cadastroprofessor' %}">
         {% csrf_token %}
         <div class="parametro">
           <div class="parametro_cadastro">
             <label for="nome">Nome Completo:</label>
             <input type="text" name="Nome" id="campo_nome" />
           </div>
-          <div class="parametro_cadastro">
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" id="campo_telefone" />
-          </div>
+
           <div class="parametro_cadastro">
             <label for="email">Email:</label>
             <input type="email" name="email" id="campo_email" />

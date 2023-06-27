@@ -6,7 +6,7 @@ class cadastrarcursoview(TemplateView):
     def cadastrar_curso(request):
         if request.method == 'POST':
             codigo = request.POST.get('codigo')
-            nome = request.POST.get('nome')
+            nome = request.POST.get('curso')
             curso = Curso.cadastrarCurso(codigo=codigo, nome=nome)
             if curso:
                 return render(request,'cadastro_curso.html')

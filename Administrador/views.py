@@ -5,6 +5,8 @@ from Grade.models import Grade
 from EspacoFisico.models import EspacoFisico
 from Disciplina.models import Disciplina
 from Aplicacao.models import Feedback
+from Administrador.models import Administrador
+from Professor.models import Professor
 
 class gerennciamento(TemplateView):
     template_name = 'funcao_Gerenciamento.html'
@@ -52,4 +54,5 @@ class Visualizarusuarioview(TemplateView):
         return render(request, 'v.usuario1.html')
     
     def visualizarusuarios(request):
-        return render(request, 'visualizar_Usuario.html')  
+        professor = Professor.objects.all()
+        return render(request, 'visualizar_Usuаrio.html', {'professor':professor})  

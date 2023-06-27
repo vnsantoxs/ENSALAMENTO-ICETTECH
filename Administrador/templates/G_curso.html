@@ -40,13 +40,13 @@
               <tr>
                 <th>Cursos:</th>
               </tr>
-              {% for curso in curso%}
+              {% for curso in cursos%}
               <tr>
                 <td>{{ curso.nome }}</td>
               </tr>
               {% empty %}
               <tr>
-                  <td colspan="3">Nenhuma grade encontrada.</td>
+                  <td colspan="3">Nenhum curso encontrado.</td>
               </tr>
                 {% endfor %}
             </tbody>
@@ -54,11 +54,18 @@
         </div>
       </div>
       <div>
-        <button class="button_back">Voltar</button>
+        <button class="button_back" onclick="voltar()">Voltar</button>
       </div>
     </section>
     <div class="button-Ad">
       <a href="{% url 'cadastrarcurso' %}"><button>Adicionar curso</button></a>
     </div>
+    <script>
+      function voltar() {
+        window.history.back();
+      }
+    </script>
   </body>
 </html>
+
+

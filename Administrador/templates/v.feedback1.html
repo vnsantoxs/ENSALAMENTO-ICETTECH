@@ -36,7 +36,7 @@
               <h1>Feedbacks</h1>
             </div>
             <div>
-              <button class="back">Voltar</button>
+              <button class="button_back" onclick="voltar()">Voltar</button>
             </div>
           </div>
           <div class="conteiner-feedback">
@@ -58,5 +58,10 @@
         </div>
       </div>
     </section>
+    <script>
+      function voltar() {
+        window.history.back();
+      }
+    </script>
   </body>
 </html>

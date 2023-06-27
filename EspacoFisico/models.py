@@ -10,6 +10,7 @@ class EspacoFisico(models.Model):
     andar = models.IntegerField()
     numero = models.IntegerField()
 
+
     @staticmethod
     def cadastrarEspacoFisico(tipo_espaco_fisico, dimensoes, capacidade, bloco, andar, numero):
         try:

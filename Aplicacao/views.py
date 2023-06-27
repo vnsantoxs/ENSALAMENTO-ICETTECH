@@ -58,15 +58,13 @@ class Cadastroprofessorview(TemplateView):
             senha = request.POST.get('senha')
             siape = request.POST.get('siape')
             area_atuacao = request.POST.get('area')
-            comorbidade = request.POST.get('comorbidade')
             
             cadastro = Professor.cadastrar_Professor(nome_professor=nome, email_professor=email, senha_professor=senha, siape_professor=siape,
-                                                    area_atuacao_professor=area_atuacao, comorbidade=comorbidade,  estado_professor=False)
+                                                    area_atuacao_professor=area_atuacao,  estado_professor=False)
             if cadastro:
                 return render(request, 'Login.html')
             else:
                 return render(request, 'index.html')
-
 
 class Registrarfeedbackview(TemplateView):
     def registrarfeedback(request):

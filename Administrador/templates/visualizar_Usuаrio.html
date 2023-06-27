@@ -49,8 +49,19 @@
                 </tr>
                 <tbody id="minha-tabela">
                   <tr>
-                    <td colspan="3">Nenhum usuário encontrado.</td>
+                    <th>Usuarios:</th>
                   </tr>
+                  {% for professor in professor%}
+                  <tr>
+                    {% if not prof.estado_professor %}
+                      <td>{{ professor.nome_professor }}</td>
+                      {% endif %}
+                  </tr>
+                    {% empty %}
+                  <tr>
+                      <td colspan="3">Nenhuma usuario encontrado.</td>
+                  </tr>
+                    {% endfor %}
                 </tbody>
               </table>
             </div>
