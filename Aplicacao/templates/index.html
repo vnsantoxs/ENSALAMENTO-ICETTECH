@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/estilohome.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/estilohomes.css' %}" />
     <title>ICETTECH</title>
   </head>
   <body>
@@ -40,13 +40,11 @@
         <a href="{% url 'visualizarensalamento' %}"
           ><button class="botão_ensalamento">
             Acessar os Ensalamentos
-          </button></a
-        >
+          </button></a>
       </div>
       <div>
         <a href="{% url 'login' %}"><button class="botãoL">Login</button></a>
       </div>
-      <br />
       <div class="link_cadastro">
         <p>Ja possui cadastro?</p>
         <a href="{% url 'tipocadastro' %}">Clique aqui!</a>
