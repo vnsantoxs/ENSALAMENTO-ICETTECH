@@ -1,4 +1,5 @@
 from django.db import models
+from Grade.models import Grade
 
 class Disciplina(models.Model):
     id_disciplina = models.AutoField(primary_key=True)
@@ -6,6 +7,7 @@ class Disciplina(models.Model):
     nome_disciplina = models.CharField(max_length=20)
     periodo_disciplina = models.IntegerField()
     tipo_disciplina = models.PositiveBigIntegerField()
+    grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
 
     @staticmethod
     def cadastrarDisciplina(codigo, nome_disciplina, periodo_disciplina):

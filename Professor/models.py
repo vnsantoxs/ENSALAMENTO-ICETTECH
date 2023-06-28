@@ -8,7 +8,7 @@ class Professor(models.Model):
     nome_professor = models.CharField(max_length=60)
     email_professor = models.EmailField()
     senha_professor = models.CharField(max_length=20)
-    siape_professor = models.CharField(max_length=8)
+    siape_professor = models.CharField(max_length=7)
     area_atuacao_professor = models.CharField(max_length=15)
     comorbidade = models.BooleanField()
     estado_professor = models.BooleanField()

@@ -1,11 +1,12 @@
 from django.db import models
-
+from Curso.models import Curso
 
 class Grade(models.Model):
     id_grade = models.AutoField(primary_key=True)
     ano = models.IntegerField(null=False)
     versao = models.CharField(max_length=12)
     codigo = models.CharField(max_length=6)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
 
     @staticmethod
     def cadastrarGrade(ano, versao, codigo):

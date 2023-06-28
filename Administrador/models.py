@@ -5,7 +5,7 @@ class Administrador(models.Model):
     id_administrador = models.AutoField(primary_key=True)
     nome_administrador = models.CharField(max_length=60)
     email_administrador = models.EmailField()
-    telefone_administrador = models.TextField(max_length=20)
+    telefone_administrador = models.CharField(max_length=12)
     senha_administrador = models.CharField(max_length=20)
     siape_administrador = models.CharField(max_length=7)
     cargo_administrador = models.CharField(max_length=15)
