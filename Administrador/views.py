@@ -7,6 +7,7 @@ from Disciplina.models import Disciplina
 from Aplicacao.models import Feedback
 from Administrador.models import Administrador
 from Professor.models import Professor
+from Alocacao.models import Alocacao
 
 class gerennciamento(TemplateView):
     template_name = 'funcao_Gerenciamento.html'
@@ -40,7 +41,9 @@ class Gerarensalamento(TemplateView):
 
 class visualizarensalamento(TemplateView):
     def visualizarensalamentoview(request):
-        return render(request, 'visualizar_Ensalamento.html')
+        alocacoes = Alocacao.objects.order_by('horario_alocacao')
+        return render(request, 'visualizar_Ensalamento.html', {'alocacoes':alocacoes})
+    
 
 class Visualizarresevaview(TemplateView):
     def visualizarreservas(request):

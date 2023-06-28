@@ -35,8 +35,15 @@
           </div>
           <div class="conteiner-ensalamento">
             <div class="tabela">
-              <table>
+              <table id="tabela-dados">
                 <tr class="top">
+                        <tr>
+                            <th>Dia da Semana</th>
+                            <th>Horário</th>
+                            <th>Disciplina</th>
+                            <th>Espaço Físico</th>
+                            <th>Professor</th>
+                        </tr>
                   <div class="th-content">
                     <span class="bold-text">Salas Alocadas:</span>
                     <button class="filtro">Filtro</button>
@@ -87,16 +94,61 @@
                 </tr>
                 <tbody>
                   <tr>
-                    <td>
-                      Seg - 08h ás 10h - Christophe Saint de Lima Xavier -
-                      Engenharia de Software 2 - Sala 204 - Bloco A
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Seg - 08h ás 10h - Christophe Saint de Lima Xavier -
-                      farmacia - Sala 204 - Bloco A
-                    </td>
+                    {% for alocacao in alocacoes %}
+                    <tr>
+                        {% if  alocacao.dia_semana == 'Segunda-Feira' %}
+                        <td>{{ alocacao.dia_semana }}</td>
+                        <td>{{ alocacao.horario_alocacao }}</td>
+                        <td>{{ alocacao.disciplina.nome_disciplina }}</td>
+                        <td>Nº{{ alocacao.espaco_fisico.numero }} A{{ alocacao.espaco_fisico.andar }} {{ alocacao.espaco_fisico.bloco }}</td>
+                        <td>{{ alocacao.professor.nome_professor }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% for alocacao in alocacoes %}
+                    <tr>
+                        {% if  alocacao.dia_semana == 'Terça-Feira' %}
+                        <td>{{ alocacao.dia_semana }}</td>
+                        <td>{{ alocacao.horario_alocacao }}</td>
+                        <td>{{ alocacao.disciplina.nome_disciplina }}</td>
+                        <td>Nº{{ alocacao.espaco_fisico.numero }} A{{ alocacao.espaco_fisico.andar }} {{ alocacao.espaco_fisico.bloco }}</td>
+                        <td>{{ alocacao.professor.nome_professor }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% for alocacao in alocacoes %}
+                    <tr>
+                        {% if  alocacao.dia_semana == 'Quarta-Feira' %}
+                        <td>{{ alocacao.dia_semana }}</td>
+                        <td>{{ alocacao.horario_alocacao }}</td>
+                        <td>{{ alocacao.disciplina.nome_disciplina }}</td>
+                        <td>Nº{{ alocacao.espaco_fisico.numero }} A{{ alocacao.espaco_fisico.andar }} {{ alocacao.espaco_fisico.bloco }}</td>
+                        <td>{{ alocacao.professor.nome_professor }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% for alocacao in alocacoes %}
+                    <tr>
+                        {% if  alocacao.dia_semana == 'Quinta-Feira' %}
+                        <td>{{ alocacao.dia_semana }}</td>
+                        <td>{{ alocacao.horario_alocacao }}</td>
+                        <td>{{ alocacao.disciplina.nome_disciplina }}</td>
+                        <td>Nº{{ alocacao.espaco_fisico.numero }} A{{ alocacao.espaco_fisico.andar }} {{ alocacao.espaco_fisico.bloco }}</td>
+                        <td>{{ alocacao.professor.nome_professor }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    {% for alocacao in alocacoes %}
+                    <tr>
+                        {% if  alocacao.dia_semana == 'Sexta-Feira' %}
+                        <td>{{ alocacao.dia_semana }}</td>
+                        <td>{{ alocacao.horario_alocacao }}</td>
+                        <td>{{ alocacao.disciplina.nome_disciplina }}</td>
+                        <td>Nº{{ alocacao.espaco_fisico.numero }} A{{ alocacao.espaco_fisico.andar }} {{ alocacao.espaco_fisico.bloco }}</td>
+                        <td>{{ alocacao.professor.nome_professor }}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
                   </tr>
                 </tbody>
               </table>
@@ -107,9 +159,6 @@
       <div class="botões-posição">
         <div class="botões">
           <button class="btn">Baixar PDF</button>
-        </div>
-        <div>
-          <button class="btn">Finalizar</button>
         </div>
       </div>
     </section>
