@@ -97,7 +97,9 @@ form {
   color: black;
 }
 
-.parametro_cadastro input[type="text"], .parametro_cadastro select {
+.parametro_cadastro input[type="text"],
+.parametro_cadastro input[type="number"],
+.parametro_cadastro select {
   width: 100%;
   padding: 10px 75px;
   box-sizing: border-box;
@@ -110,7 +112,7 @@ form {
   position: absolute;
   width: 285px;
   height: 40px;
-  left: 74%;
+  left:74%;
   top: 350px;
 
   background: #1d8a6d;
