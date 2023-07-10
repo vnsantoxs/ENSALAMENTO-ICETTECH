@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import gerennciamento, feedbackviews, Gerarensalamento, Visualizarresevaview, Visualizarusuarioview, visualizarensalamento
+from .views import gerennciamento, feedbackviews, Gerarensalamentoview, Visualizarresevaview, Visualizarusuarioview, visualizarensalamento
 
 urlpatterns = [
     path('gerenciamento/', gerennciamento.as_view(), name='gerenciamento'),
@@ -9,7 +9,7 @@ urlpatterns = [
     path('gerenrenciamento/disiciplina/', gerennciamento.gerenciamentodisciplina, name='gerenrenciamentodisiciplina'),
     path('gerenciamento/espacofisico/', gerennciamento.gerenciamentoespacofisico, name='gerenciamentoespacofisico'),
     path('gerenciamento/grade/', gerennciamento.gerenciamentograde, name='gerenciamentograde'),
-    path('gerarensalamento/', Gerarensalamento.as_view(), name='gerarensalamento'),
+    path('gerarensalamento/', Gerarensalamentoview, name='gerarensalamento'),
     path('visualizarreservas/', Visualizarresevaview.visualizarreservas, name= 'visualizarreservas'),
     path('visualizarreserva/', Visualizarresevaview.visualizarreserva, name= 'visualizarreserva'),
     path('visualizarusuarios/', Visualizarusuarioview.visualizarusuarios, name='visualizarusuarios'),

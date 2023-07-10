@@ -35,9 +35,12 @@ class feedbackviews(TemplateView):
     def feedbackview(request):
         return render(request, 'v.feedback2.html')
 
-    
-class Gerarensalamento(TemplateView):
-    template_name = 'Gerar_ensalamento.html'
+
+def Gerarensalamentoview(request):
+    disciplina =  Disciplina.objects.all()
+    professor = Professor.objects.all()
+    return render(request, 'gerar_ensalamento.html', {'disciplina': disciplina, 'professor': professor})
+
 
 class visualizarensalamento(TemplateView):
     def visualizarensalamentoview(request):
@@ -53,8 +56,9 @@ class Visualizarresevaview(TemplateView):
         return render(request, 'v.Reserva2.html')
     
 class Visualizarusuarioview(TemplateView):
-    def visualizarusuario(request):
-        return render(request, 'v.usuario1.html')
+    def visualizarusuario(request, id):
+        usuario = Professor.objects.get(id_professor=id)
+        return render(request, 'v.usuario1.html', {'usuario': usuario})
     
     def visualizarusuarios(request):
         professor = Professor.objects.all()
