@@ -46,7 +46,7 @@
           <div class="form-group">
              <select id="disciplina">
               {% for disciplina in disciplina %}
-                <option value="">{{ disciplina.nome_disciplina }}</option>
+                <option value="{{ disciplina.nome_disciplina }}">{{ disciplina.nome_disciplina }}</option>
               {% endfor %}
             </select>
           </div>
@@ -72,29 +72,34 @@
           <div class="form-group">
             <select id="professor">
               {% for professor in professor %}
-                <option value="">{{ professor.nome_professor }}</option>
+                <option value="{{ professor.nome_professor }}">{{ professor.nome_professor }}</option>
               {% endfor %}
             </select>
           </div>
         </div>
 
         <div class="botões">
-          <button class="adc" type="button" onclick="adicionarEnsalamento()">
+          <button class="adc" type="button">
             Adicionar
           </button>
-          <button class="enviar" type="button" onclick="enviarEnsalamentos()">
-            Enviar
+          <button class="enviar" type="button">
+            Gerar
           </button>
         </div>
       </form>
 
       <div class="reservations">
-        <h2>Resumo:</h2>
+        <h2>Alocação:</h2>
         <div class="table-container">
           <table id="tabelaEnsalamento">
-            <tr>
-              <th>Alocação:</th>
-            </tr>
+            <tbody>{% for alocacao in alocacoes %}
+                    <tr>
+                        <td>{{ alocacao.dia_semana }}</td>
+                        <td>{{ alocacao.horario_alocacao }}</td>
+                        <td>{{ alocacao.disciplina.nome_disciplina }}</td>
+                        <td>{{ alocacao.professor.nome_professor }}</td>
+                    </tr>
+              {% endfor %}</tbody>
           </table>
         </div>
       </div>

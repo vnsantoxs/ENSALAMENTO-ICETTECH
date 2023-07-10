@@ -42,27 +42,24 @@
           <div class="conteiner-usuários">
             <div class="tabela">
               <table>
-                <tr class="top">
-                  <div class="th-content">
-                    <span class="bold-text">Mais recentes:</span>
-                  </div>
-                </tr>
-                <tbody id="minha-tabela">
+               <tbody id="minha-tabela">
                   <tr>
-                    <th>Usuarios:</th>
+                    <th>Usuários:</th>
                   </tr>
-                  {% for professor in professor%}
-                  <tr>
-                    {% if not prof.estado_professor %}
-                      <td>{{ professor.nome_professor }}</td>
+                  {% for professor in professor %}
+                    <tr>
+                      {% if not professor.estado_professor %}
+                      <td>
+                        <a href="{% url 'visualizarusuario' professor.id_professor %}">{{ professor.nome_professor }}</a>
+                      </td>
                       {% endif %}
-                  </tr>
-                    {% empty %}
-                  <tr>
-                      <td colspan="3">Nenhuma usuario encontrado.</td>
-                  </tr>
-                    {% endfor %}
-                </tbody>
+                    </tr>
+                  {% empty %}
+                    <tr>
+                      <td colspan="3">Nenhum usuário encontrado.</td>
+                    </tr>
+                  {% endfor %}
+              </tbody>
               </table>
             </div>
           </div>

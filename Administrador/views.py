@@ -39,7 +39,8 @@ class feedbackviews(TemplateView):
 def Gerarensalamentoview(request):
     disciplina =  Disciplina.objects.all()
     professor = Professor.objects.all()
-    return render(request, 'gerar_ensalamento.html', {'disciplina': disciplina, 'professor': professor})
+    alocacoes = Alocacao.objects.order_by('professor')
+    return render(request, 'gerar_ensalamento.html', {'disciplina': disciplina, 'professor': professor, 'alocacoes':alocacoes})
 
 
 class visualizarensalamento(TemplateView):
@@ -56,10 +57,11 @@ class Visualizarresevaview(TemplateView):
         return render(request, 'v.Reserva2.html')
     
 class Visualizarusuarioview(TemplateView):
-    def visualizarusuario(request, id):
-        usuario = Professor.objects.get(id_professor=id)
+    def visualizarusuario(request, professor_id):
+        usuario = Professor.objects.get(id_professor=professor_id)
         return render(request, 'v.usuario1.html', {'usuario': usuario})
-    
+
+
     def visualizarusuarios(request):
         professor = Professor.objects.all()
         return render(request, 'visualizar_Usuаrio.html', {'professor':professor})  
