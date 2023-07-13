@@ -57,11 +57,12 @@ class Visualizarresevaview(TemplateView):
         return render(request, 'v.Reserva2.html')
     
 class Visualizarusuarioview(TemplateView):
-    def visualizarusuario(request, professor_id):
+    @classmethod
+    def visualizarusuario(cls, professor_id):
         usuario = Professor.objects.get(id_professor=professor_id)
         return render(request, 'v.usuario1.html', {'usuario': usuario})
 
-
     def visualizarusuarios(request):
         professor = Professor.objects.all()
-        return render(request, 'visualizar_Usuаrio.html', {'professor':professor})  
+        return render(request, 'visualizar_Usuаrio.html', {'professor': professor})
+
