@@ -8,19 +8,16 @@ class Alocacao(models.Model):
     id_alocacao = models.AutoField(primary_key=True)
     dia_semana = models.CharField(max_length=15)
     horario_alocacao = models.IntegerField()
+    tipo_alocacao = models.CharField(max_length=15)
     disciplina = models.ForeignKey(Disciplina,on_delete=models.CASCADE)
     espaco_fisico = models.ForeignKey(EspacoFisico, on_delete=models.CASCADE)
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
 
     @staticmethod
-    def cadastrar_Alocacao(dia_semana, horario_alocacao, disciplina, professor):
+    def cadastrar_Alocacao(dia_semana, horario_alocacao, disciplina, professor, tipo):
         try:
-            Alocacao.objects.get(dia_semana=dia_semana, horario_alocacao=horario_alocacao,
-                                 disciplina=disciplina, professor=professor)
-            return False
-        except Alocacao.DoesNotExist:
             alocacao = Alocacao(dia_semana=dia_semana, horario_alocacao=horario_alocacao,
-                                disciplina=disciplina, professor=professor)
+                                disciplina=disciplina, professor=professor, tipo_alocacao=tipo)
             alocacao.save()
             return True
         except Exception:

@@ -37,10 +37,23 @@ class feedbackviews(TemplateView):
 
 
 def Gerarensalamentoview(request):
-    disciplina =  Disciplina.objects.all()
-    professor = Professor.objects.all()
-    alocacoes = Alocacao.objects.order_by('professor')
-    return render(request, 'gerar_ensalamento.html', {'disciplina': disciplina, 'professor': professor, 'alocacoes':alocacoes})
+        disciplina = Disciplina.objects.all()
+        professor = Professor.objects.all()
+        alocacoes = Alocacao.objects.order_by('professor')
+        if request.method == 'POST':
+            horarios = request.POST['horario']
+            disciplinas = request.POST['disciplina']
+            tipos = request.POST['tipo']
+            dias = request.POST['dia']
+            professores = request.POST['professor']
+            print(horarios,dias,disciplinas,professores,tipos)
+            Alocacao.cadastrar_Alocacao(dia_semana=dias, horario_alocacao=horarios,
+                                        disciplina=disciplinas, professor=professores, tipo= tipos)
+            return render(request, 'gerar_ensalamento.html',
+                          {'disciplina': disciplina, 'professor': professor, 'alocacoes': alocacoes})
+        else:
+            return render(request, 'gerar_ensalamento.html',
+                          {'disciplina': disciplina, 'professor': professor, 'alocacoes':alocacoes})
 
 
 class visualizarensalamento(TemplateView):

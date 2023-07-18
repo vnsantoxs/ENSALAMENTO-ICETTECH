@@ -45,10 +45,10 @@
           </div>
           <div class="form-group">
              <select id="disciplina">
-              {% for disciplina in disciplina %}
-                <option value="{{ disciplina.nome_disciplina }}">{{ disciplina.nome_disciplina }}</option>
-              {% endfor %}
-            </select>
+            {% for disc in disciplina %}
+               <option value="{{ disc.nome_disciplina }}">{{ disc.nome_disciplina }}</option>
+            {% endfor %}
+          </select>
           </div>
           <div class ="form-group">
             <select name="tipo" id="tipo">
@@ -71,15 +71,15 @@
           </div>
           <div class="form-group">
             <select id="professor">
-              {% for professor in professor %}
-                <option value="{{ professor.nome_professor }}">{{ professor.nome_professor }}</option>
-              {% endfor %}
-            </select>
+            {% for prof in professor %}
+              <option value="{{ prof.nome_professor }}">{{ prof.nome_professor }}</option>
+            {% endfor %}
+          </select>
           </div>
         </div>
 
         <div class="botões">
-          <button class="adc" type="button">
+          <button class="adc" type="submit">
             Adicionar
           </button>
           <button class="enviar" type="button">
