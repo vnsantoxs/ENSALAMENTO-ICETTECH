@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/gerenciarcurs.css' %}" />
+    <title>Curso</title>
+  </head>
+  <body>
+    <header class="header-conteiner">
+      <div class="header-left">
+        <h3 class="nomeLogo">Icettech</h3>
+        <img
+          class="logotipo2"
+          src="{% static 'imagens/LogoicettechPB.png' %}"
+          alt=""
+        />
+      </div>
+    </header>
+    <nav class="navegação">
+      <div class="links">
+        <p>Perfil</p>
+        <a href="{% url 'perfil' %}"
+          ><img src="{% static 'imagens/Iconesprofessor2.png' %}" alt=""
+        /></a>
+      </div>
+    </nav>
+    <section>
+      <div class="title">
+        <p>Gerenciar</p>
+        <h1>cursos</h1>
+      </div>
+      <div class="conteiner">
+        <div class="table-wrapper">
+          <table>
+            <tbody id="tbody">
+              <tr>
+                <th>Cursos:</th>
+              </tr>
+              {% for curso in cursos%}
+              <tr>
+                <td>{{ curso.nome }}</td>
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="3">Nenhum curso encontrado.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <button class="button_back" onclick="voltar()">Voltar</button>
+      </div>
+    </section>
+    <div class="button-Ad">
+      <a href="{% url 'cadastrarcurso' %}"><button>Adicionar curso</button></a>
+    </div>
+    <script>
+      function voltar() {
+        window.history.back();
+      }
+    </script>
+  </body>
+</html>
