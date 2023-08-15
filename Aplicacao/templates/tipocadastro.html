@@ -1,51 +1,56 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, max-scale=1.0"
-    /> 
- 
+    />
     <link rel="stylesheet" href="{% static 'css/estilohomes.css' %}" />
-
-    <title>Cadastro</title>
+    <title>Tipos de Cadastros</title>
   </head>
   <body>
-    <header class="header-conteiner">
+    <header class="header-container">
       <div class="header-left">
         <h3 class="nomeLogo">Icettech</h3>
-        <img class="logotipo2" src="{% static 'imagens/LogoicettechPB.png' %}" alt="" />
-
+        <img
+          class="logo"
+          src="{% static 'imagens/LogoicettechPB.png' %}"
+          alt="Logo"
+        />
+      </div>
+      <div class="header-right">
+        <a class="perfil" href="{% url 'aboutus' %}">Sobre Nós</a>
       </div>
     </header>
-    <nav class="navegação">
-      <div class="links">
-        <a href="">Sobre Nós</a>
-      </div>
-    </nav>
-    <section>
-      <div class="conteiner_2">
-        <h1>Cadastro</h1>
-        <hr />
-        <p>Você é um:</p>
-      </div>
+    <section class="tipos">
       <div class="conteiner-tipo_cadastro">
-        <a id="img_Admin" href="{% url 'cadastroadministrador' %}"
-          ><img src="{% static 'imagens/iconeadministrador.png' %}" alt="Administrador"
-        /></a>
-        <a href="{% url 'cadastroprofessor' %}"
-          ><img src="{% static 'imagens/iconeprofessor.png' %}" alt="Professor"
-        /></a>
-      </div>
-      <div class= "identify_text">
-        <p>Adiministrador</p>
-      </div>
-      <div class= "identify_text1">
-        <p>Professor</p>
+        <div class="conteiner_2">
+          <h1>Cadastro</h1>
+          <hr />
+          <p>Você é um:</p>
+        </div>
+        <div class="conteiner_fig">
+          <figure>
+            <a id="img_Admin" href="{% url 'cadastroadministrador' %}"
+              ><img
+                src="{% static 'imagens/iconeadministrador.png' %}"
+                alt="Administrador"
+            /></a>
+            <figcaption class="fig1">Administrador</figcaption>
+          </figure>
+          <figure class="fig_prof">
+            <a href="{% url 'cadastroprofessor' %}"
+              ><img
+                src="{% static 'imagens/iconeprofessor.png' %}"
+                alt="Professor"
+            /></a>
+            <figcaption class="fig2">Professor</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
     <footer>
